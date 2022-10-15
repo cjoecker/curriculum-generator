@@ -4,9 +4,23 @@
   "private": true,
   "scripts": {
     "start": "react-scripts start",
+    "start:dev": "cross-env ESLINT_NO_DEV_ERRORS=true react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "prettier --write",
+    "lint": "eslint --max-warnings=0",
+    "lint:fix": "pnpm lint --fix",
+    "lint:all": "pnpm lint .",
+    "lint:fix:all": "pnpm lint:fix .",
+    "check-types": "tsc --noemit -p tsconfig.json --incremental",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*/src/*.+(ts|tsx)": [
+      "npm run format",
+      "npm run lint:fix"
+    ]
   },
   "dependencies": {
     "@react-pdf/renderer": "^3.0.0",
@@ -23,6 +37,31 @@
       "react-app/jest"
     ]
   },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@types/node": "^16.11.65",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.13.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "autoprefixer": "^10.4.12",
+    "cross-env": "^7.0.3",
+    "eslint": "^7.32.0 || ^8.2.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "^7.28.0",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-unicorn": "^44.0.2",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "husky": "^8.0.1",
+    "postcss": "^8.4.18",
+    "prettier": "^2.7.1",
+    "tailwindcss": "^3.1.8"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
@@ -34,15 +73,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@types/node": "^16.11.65",
-    "@types/react": "^18.0.21",
-    "@types/react-dom": "^18.0.6",
-    "autoprefixer": "^10.4.12",
-    "postcss": "^8.4.18",
-    "prettier": "^2.7.1",
-    "tailwindcss": "^3.1.8"
   }
 }
