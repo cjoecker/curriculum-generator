@@ -3,17 +3,15 @@
   "env": {
     "node": true
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint",
-    "jest",
-    "import",
-    "unused-imports",
-    "unicorn"
-  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx"],
+      "files": ["**/*.ts", "**/*.tsx"],
       "parser": "@typescript-eslint/parser",
       "parserOptions": {
         "project": ["./tsconfig.json"],
@@ -22,13 +20,25 @@
         }
       },
       "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
         "airbnb-typescript",
         "airbnb/hooks",
-        "plugin:@typescript-eslint/recommended",
         "plugin:jest/recommended",
-        "plugin:prettier/recommended",
         "plugin:unicorn/recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "prettier",
+        "plugin:jsx-a11y/recommended"
+      ],
+      "plugins": [
+        "react",
+        "react-hooks",
+        "@typescript-eslint",
+        "jest",
+        "import",
+        "unused-imports",
+        "unicorn",
+        "jsx-a11y"
       ],
       "rules": {
         "no-console": ["error", { "allow": ["dir", "info", "warn", "error"] }], // prevent debugging console.log statements
