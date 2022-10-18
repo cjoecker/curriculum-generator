@@ -1,3 +1,7 @@
+html {
+  font-size: 14px;
+}
+
 a:after {
   content: "";
   background-image:url('./images/link.svg');
@@ -8,4 +12,19 @@ a:after {
   position:relative;
   top:2px;
   margin-left: 1px;
+}
+
+p {
+  margin-bottom: 0.25rem;
+}
+
+.chip{
+  background: linear-gradient(145deg, #c5c5d9, #ddddec);
+  box-shadow:  3px 3px 5px #a7a7b7,
+  -3px -3px 5px #dadaf1;
+}
+
+.personal-information{
+  box-shadow:  2px 2px 4px #9c9cae,
+  -2px -2px 4px #e9e9ea;
 }

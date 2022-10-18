@@ -2,12 +2,13 @@ import React from 'react'
 import './app.css'
 import { LeftColumn } from './components/left-column'
 import { darken } from 'polished'
+import {RightColumn} from "./components/right-column";
 
 const BACKGROUND_COLOR = '#e3e3f1'
 
 function App() {
   return (
-    <div className='h-screen w-screen flex font-quicksand'>
+    <div className='h-screen w-screen flex font-quicksand text-black '>
       <div
         className='w-[210mm] h-[296mm] mx-auto'
         style={{
@@ -19,7 +20,7 @@ function App() {
       >
         <div className='flex w-full'>
           <LeftColumn />
-          <div className='flex-2'>1</div>
+          <RightColumn/>
         </div>
       </div>
     </div>

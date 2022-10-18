@@ -6,7 +6,9 @@ module.exports = {
       quicksand: ['quicksand'],
     },
     colors: {
-      primary: '#0f61a0',
+      "blue": '#0f61a0',
+      "black": '#3D3D3D',
+      "white": '#fff',
     },
     extend: {
       flex: {
