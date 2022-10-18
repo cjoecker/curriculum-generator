@@ -21,7 +21,7 @@ p {
 .chip{
   background: linear-gradient(145deg, #c5c5d9, #ddddec);
   box-shadow:  3px 3px 5px #a7a7b7,
-  -3px -3px 5px #dadaf1;
+  -3px -3px 5px #d7d7e8;
 }
 
 .personal-information{

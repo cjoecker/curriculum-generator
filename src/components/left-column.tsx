@@ -47,7 +47,7 @@ const Title = ({ label }: TitleProps) => {
 
 export const LeftColumn = () => {
   return (
-    <div className='flex-shrink-0 flex-grow-0 w-[65mm] flex gap-4 p-4 flex-col'>
+    <div className='flex-shrink-0 flex-grow-0 w-[55mm] flex gap-4 p-4 flex-col'>
       <img alt="christian's picture" src={christian} className='rounded-full w-44 h-44 object-cover mx-auto' />
       <div className='flex flex-col gap-4'>
         <Title label='Personal Information' />
