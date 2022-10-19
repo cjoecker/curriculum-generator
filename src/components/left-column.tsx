@@ -12,13 +12,13 @@ interface PersonalInformationItemProps {
   label: string
 }
 
-const PersonalInformationItem = ({ icon, label }: PersonalInformationItemProps) => {
+export const PersonalInformationItem = ({ icon, label }: PersonalInformationItemProps) => {
   return (
-    <div className='flex flex-1'>
+    <div className='flex '>
         <div className="personal-information rounded-full h-8 min-w-[2rem] flex justify-center my-auto">
             <img src={icon} alt={label} className='m-auto h-5 w-5' />
         </div>
-      <div className='whitespace-pre-wrap leading-5 ml-2 my-auto'>{label}</div>
+      <div className='whitespace-nowrap leading-5 ml-2 my-auto'>{label}</div>
     </div>
   )
 }
@@ -28,7 +28,7 @@ interface LanguageProps {
   level: string
 }
 
-const Language = ({ language, level }: LanguageProps) => {
+export const Language = ({ language, level }: LanguageProps) => {
   return (
     <div className='flex-1'>
       <span className='font-bold'>{`${language}: `}</span>

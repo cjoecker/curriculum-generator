@@ -31,15 +31,15 @@ interface TitleProps {
   label: string
 }
 
-const Title = ({ label }: TitleProps) => {
-  return <h3 className="font-bold text-blue text-lg mt-4">{label}</h3>
+export const Title = ({ label }: TitleProps) => {
+  return <h3 className="font-bold text-blue text-lg">{label}</h3>
 }
 
 interface ExperienceBlockProps {
   experience: Experience
 }
 
-const ExperienceBlock = ({ experience }: ExperienceBlockProps) => {
+export const ExperienceBlock = ({ experience }: ExperienceBlockProps) => {
   return (
     <div className="mt-2">
       <span className="font-bold ">{experience.company}</span>
