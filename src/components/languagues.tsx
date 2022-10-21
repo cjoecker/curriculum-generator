@@ -13,7 +13,7 @@ export const Language = ({ language, level }: { language: string; level: string 
 
 export const Languages = () => {
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col mb-4">
             <Title label="Language" />
             {LANGUAGES.map((language) => (
                 <Language key={language.language} language={language.language} level={language.level} />

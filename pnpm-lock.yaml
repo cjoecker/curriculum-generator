@@ -11,6 +11,7 @@ specifiers:
   autoprefixer: ^10.4.12
   buffer: ^6.0.3
   cross-env: ^7.0.3
+  date-fns: ^2.29.3
   eslint: ^8.25.0
   eslint-config-airbnb: ^19.0.4
   eslint-config-airbnb-typescript: ^17.0.0
@@ -36,6 +37,7 @@ specifiers:
 dependencies:
   '@react-pdf/renderer': 3.0.0_react@18.2.0
   buffer: 6.0.3
+  date-fns: 2.29.3
   polished: 4.2.2
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -4097,6 +4099,11 @@ packages:
       abab: 2.0.6
       whatwg-mimetype: 2.3.0
       whatwg-url: 8.7.0
+    dev: false
+
+  /date-fns/2.29.3:
+    resolution: {integrity: sha512-dDCnyH2WnnKusqvZZ6+jA1O51Ibt8ZMRNkDZdyAyK4YfbDwa/cEmuztzG5pk6hqlp9aSBPYcjOlktquahGwGeA==}
+    engines: {node: '>=0.11'}
     dev: false
 
   /debug/2.6.9:

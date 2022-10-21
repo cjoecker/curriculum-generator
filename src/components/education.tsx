@@ -8,7 +8,7 @@ export const Education = () => {
         <div className="flex flex-col">
             <Title label={'Education'} />
             {STUDIES.map((experienceBlock) => (
-                <Experience experience={experienceBlock} key={experienceBlock.company} />
+                <Experience experience={experienceBlock} key={experienceBlock.institution} />
             ))}
         </div>
     )
