@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode, useEffect } from 'react'
 import './app.css'
 import { darken } from 'polished'
 
@@ -9,6 +9,7 @@ import { WorkExperience } from './components/work-experience'
 
 import { Hobbies } from './components/hobbies'
 import { format } from 'date-fns'
+import { PERSONAL_INFORMATION } from './constants/curriculum-information'
 
 const BACKGROUND_COLOR = '#e3e3f1'
 export const Box = ({ children }: { children: ReactNode | ReactNode[] }) => {
@@ -16,6 +17,12 @@ export const Box = ({ children }: { children: ReactNode | ReactNode[] }) => {
 }
 
 function App() {
+  useEffect(() => {
+    document.title = `cv_${PERSONAL_INFORMATION.name
+      .replace(' ', '_')
+      .replace('ö', 'oe')
+      .toLowerCase()}_en`
+  })
   return (
     <div className="h-screen w-screen flex font-quicksand text-black ">
       <div

@@ -36,7 +36,7 @@ export const Header = () => {
       <div className="flex flex-col flex-1 ml-6">
         <div className="flex-1 flex flex-col w-full justify-center">
           <h1 className="font-bold text-blue text-3xl">{PERSONAL_INFORMATION.name}</h1>
-          <h2 className="text-lg">{PERSONAL_INFORMATION.title}</h2>
+          <h2 className="text-lg font-bold">{PERSONAL_INFORMATION.title}</h2>
         </div>
         <div className="w-full grid grid-cols-3 gap-2 max-w-[140mm]">
           <PersonalInformationItem icon={location} label={PERSONAL_INFORMATION.location} />
