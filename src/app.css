@@ -2,6 +2,24 @@ html {
   font-size: 13.7px;
 }
 
+:root {
+  --bg-main: linear-gradient(130deg, rgb(227, 227, 241), rgb(200, 200, 227));
+}
+
+.bg-main {
+  background: var(--bg-main)
+}
+
+@media print {
+  html {
+    background: var(--bg-main);
+  }
+  .bg-main {
+    background: initial;
+  }
+}
+
+
 a:after {
   content: "";
   background-image:url('./images/link.svg');

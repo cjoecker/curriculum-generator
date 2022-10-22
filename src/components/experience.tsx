@@ -21,13 +21,13 @@ export const Experience = ({ experience }: ExperienceBlockProps) => {
       </div>
       <div>
         {experience.positions.map((position) => (
-          <div className="mb-2" key={position.title}>
-            <span className="underline">{position.title}</span>
+          <div className="mb-5 last:mb-0" key={position.title}>
+            <span className="underline decoration-1">{position.title}</span>
             <span className="ml-2 text-blue ">
               {formatTimePeriod(position.startDate, position.endDate)}
             </span>
             {position.descriptionBlocks.map((description, index) => (
-              <div className="mb-3 " key={index}>
+              <div className="mb-3 mt-1" key={index}>
                 <div className="text-sm">{description.text}</div>
                 <div className="text-xs italic -mt-0.5 ml-1">{description.chipsTitle}</div>
                 <div className="flex flex-wrap">

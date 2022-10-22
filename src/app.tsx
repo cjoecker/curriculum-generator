@@ -10,6 +10,7 @@ import { WorkExperience } from './components/work-experience'
 import { Hobbies } from './components/hobbies'
 import { format } from 'date-fns'
 import { PERSONAL_INFORMATION } from './constants/curriculum-information'
+import { useMediaQuery } from 'react-responsive'
 
 const BACKGROUND_COLOR = '#e3e3f1'
 export const Box = ({ children }: { children: ReactNode | ReactNode[] }) => {
@@ -23,17 +24,10 @@ function App() {
       .replace('ö', 'oe')
       .toLowerCase()}_en`
   })
+  
   return (
     <div className="h-screen w-screen flex font-quicksand text-black ">
-      <div
-        className="w-[210mm] h-[296mm] mx-auto p-[3mm] relative"
-        style={{
-          background: `linear-gradient(145deg, ${BACKGROUND_COLOR}, ${darken(
-            0.15,
-            BACKGROUND_COLOR,
-          )})`,
-        }}
-      >
+      <div className="w-[210mm] h-[296mm] mx-auto p-[3mm] relative bg-main">
         <Box>
           <Header />
         </Box>
@@ -65,6 +59,6 @@ function App() {
 
 export default App
 
-export function formatDate(date: Date, showDay = false){
+export function formatDate(date: Date, showDay = false) {
   return showDay ? format(date, 'MMM dd, yyyy') : format(date, 'MMM, yyyy')
 }
