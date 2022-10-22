@@ -6,6 +6,7 @@ import smartphone from '../images/smartphone.svg'
 import email from '../images/email.svg'
 import birthday from '../images/birthday.svg'
 import passport from '../images/passport.svg'
+import {formatDate} from "../app";
 
 interface PersonalInformationItemProps {
   icon: string
@@ -42,7 +43,7 @@ export const Header = () => {
           <PersonalInformationItem icon={location} label={PERSONAL_INFORMATION.location} />
           <PersonalInformationItem icon={smartphone} label={PERSONAL_INFORMATION.phone} />
           <PersonalInformationItem icon={email} label={PERSONAL_INFORMATION.email} />
-          <PersonalInformationItem icon={birthday} label={PERSONAL_INFORMATION.birthday} />
+          <PersonalInformationItem icon={birthday} label={formatDate(PERSONAL_INFORMATION.birthday)} />
           <PersonalInformationItem icon={passport} label={PERSONAL_INFORMATION.citizenship} />
         </div>
       </div>

@@ -56,7 +56,7 @@ function App() {
           </div>
         </div>
         <div className="absolute right-8 bottom-4 italic">
-          Last updated on {format(new Date(), 'MMM dd, yyyy')}
+          Last updated on {formatDate(new Date(), true)}
         </div>
       </div>
     </div>
@@ -65,11 +65,6 @@ function App() {
 
 export default App
 
-// const primary = '#0f61a0'
-// const primaryContrastText = '#fafafa'
-// const secondary = '#6d6d6d'
-// const secondaryContrastText = '#fafafa'
-// const primaryText = '#3D3D3D'
-// const secondaryText = '#575757'
-// const disabledText = '#858585'
-// const paperBackground = '#ffffff'
+export function formatDate(date: Date, showDay = false){
+  return showDay ? format(date, 'MMM dd, yyyy') : format(date, 'MMM, yyyy')
+}

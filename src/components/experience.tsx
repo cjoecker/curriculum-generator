@@ -1,4 +1,11 @@
-import { ExperienceType } from '../constants/curriculum-information'
+import { ExperienceType, Position } from '../constants/curriculum-information'
+import { formatDate } from '../app'
+import {
+  differenceInMonths,
+  differenceInYears,
+  formatDistanceStrict,
+  formatDistanceToNowStrict,
+} from 'date-fns'
 
 interface ExperienceBlockProps {
   experience: ExperienceType
@@ -16,7 +23,9 @@ export const Experience = ({ experience }: ExperienceBlockProps) => {
         {experience.positions.map((position) => (
           <div className="mb-2" key={position.title}>
             <span className="underline">{position.title}</span>
-            <span className="ml-2 text-blue ">{position.timeFrame}</span>
+            <span className="ml-2 text-blue ">
+              {formatTimePeriod(position.startDate, position.endDate)}
+            </span>
             {position.descriptionBlocks.map((description, index) => (
               <div className="mb-3 " key={index}>
                 <div className="text-sm">{description.text}</div>
@@ -35,4 +44,17 @@ export const Experience = ({ experience }: ExperienceBlockProps) => {
       </div>
     </div>
   )
+}
+function formatTimePeriod(startDate: Position['startDate'], endDate: Position['endDate']) {
+  const newEndDate = endDate === 'today' ? new Date() : endDate
+
+  const distanceInYears = (differenceInMonths(newEndDate, startDate) + 1) / 12
+  const distance =
+    distanceInYears > 1
+      ? `${distanceInYears.toFixed(1)}y`
+      : `${differenceInMonths(newEndDate, startDate)}m`
+
+  return endDate === 'today'
+    ? `${formatDate(startDate)} - Present  (${distance})`
+    : `${formatDate(startDate)} - ${formatDate(endDate)}  (${distance})`
 }
