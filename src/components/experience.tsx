@@ -2,9 +2,6 @@ import { ExperienceType, Position } from '../constants/curriculum-information'
 import { formatDate } from '../app'
 import {
   differenceInMonths,
-  differenceInYears,
-  formatDistanceStrict,
-  formatDistanceToNowStrict,
 } from 'date-fns'
 
 interface ExperienceBlockProps {
@@ -51,7 +48,7 @@ function formatTimePeriod(startDate: Position['startDate'], endDate: Position['e
   const distanceInYears = (differenceInMonths(newEndDate, startDate) + 1) / 12
   const distance =
     distanceInYears > 1
-      ? `${distanceInYears.toFixed(1)}y`
+      ? `${distanceInYears.toFixed(1).replace('.0','')}y`
       : `${differenceInMonths(newEndDate, startDate)}m`
 
   return endDate === 'today'
