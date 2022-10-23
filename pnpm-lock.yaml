@@ -6,6 +6,7 @@ specifiers:
   '@types/node': ^16.11.65
   '@types/react': ^18.0.21
   '@types/react-dom': ^18.0.6
+  '@types/webpack-env': ^1.18.0
   '@typescript-eslint/eslint-plugin': ^5.13.0
   '@typescript-eslint/parser': ^5.0.0
   autoprefixer: ^10.4.12
@@ -50,6 +51,7 @@ devDependencies:
   '@types/node': 16.11.65
   '@types/react': 18.0.21
   '@types/react-dom': 18.0.6
+  '@types/webpack-env': 1.18.0
   '@typescript-eslint/eslint-plugin': 5.40.0_25sstg4uu2sk4pm7xcyzuov7xq
   '@typescript-eslint/parser': 5.40.0_z4bbprzjrhnsfa24uvmcbu7f5q
   autoprefixer: 10.4.12_postcss@8.4.18
@@ -2625,6 +2627,10 @@ packages:
   /@types/trusted-types/2.0.2:
     resolution: {integrity: sha512-F5DIZ36YVLE+PN+Zwws4kJogq47hNgX3Nx6WyDJ3kcplxyke3XIzB8uK5n/Lpm1HBsbGzd6nmGehL8cPekP+Tg==}
     dev: false
+
+  /@types/webpack-env/1.18.0:
+    resolution: {integrity: sha512-56/MAlX5WMsPVbOg7tAxnYvNYMMWr/QJiIp6BxVSW3JJXUVzzOn64qW8TzQyMSqSUFM2+PVI4aUHcHOzIz/1tg==}
+    dev: true
 
   /@types/ws/8.5.3:
     resolution: {integrity: sha512-6YOoWjruKj1uLf3INHH7D3qTXwFfEsg1kf3c0uDdSBJwfa/llkwIjrAGV7j7mVgGNbzTQ3HiHKKDXl6bJPD97w==}

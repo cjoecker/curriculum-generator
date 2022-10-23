@@ -1,5 +1,5 @@
 html {
-  font-size: 13.7px;
+  font-size: 12.9px;
 }
 
 :root {
@@ -25,8 +25,8 @@ a:after {
   background-image:url('./images/link.svg');
   background-size: 100% 100%;
   display: inline-block;
-  height: 13px;
-  width:13px;
+  height: 11px;
+  width:11px;
   position:relative;
   top:2px;
   margin-left: 1px;

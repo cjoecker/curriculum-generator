@@ -10,9 +10,7 @@ import { WorkExperience } from './components/work-experience'
 import { Hobbies } from './components/hobbies'
 import { format } from 'date-fns'
 import { PERSONAL_INFORMATION } from './constants/curriculum-information'
-import { useMediaQuery } from 'react-responsive'
 
-const BACKGROUND_COLOR = '#e3e3f1'
 export const Box = ({ children }: { children: ReactNode | ReactNode[] }) => {
   return <div className="flex m-5 ">{children}</div>
 }
@@ -24,10 +22,10 @@ function App() {
       .replace('ö', 'oe')
       .toLowerCase()}_en`
   })
-  
+
   return (
     <div className="h-screen w-screen flex font-quicksand text-black ">
-      <div className="w-[210mm] h-[296mm] mx-auto p-[3mm] relative bg-main">
+      <div className="w-[210mm] h-[296mm] mx-auto p-[2mm] relative bg-main">
         <Box>
           <Header />
         </Box>
@@ -49,8 +47,11 @@ function App() {
             </Box>
           </div>
         </div>
-        <div className="absolute right-8 bottom-4 italic">
-          Last updated on {formatDate(new Date(), true)}
+        <div className="absolute bottom-3 left-0 px-[6mm] italic flex justify-between w-full">
+          <div className="opacity-70">
+            Handcrafted with <span className="not-italic	">♥</span> and React
+          </div>
+          <div className="">Last updated on {formatDate(new Date(), true)}</div>
         </div>
       </div>
     </div>
