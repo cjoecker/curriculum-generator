@@ -1,5 +1,5 @@
 html {
-  font-size: 12.8px;
+  font-size: 12.7px;
 }
 
 :root {
@@ -38,11 +38,15 @@ p {
 
 .chip{
   background: linear-gradient(145deg, #c5c5d9, #d7d7e5);
-  box-shadow:  3px 3px 5px rgba(140, 140, 155, 0.5),
+  box-shadow:  3px 3px 5px rgb(181, 181, 199),
   -3px -3px 5px rgba(229, 229, 245, 0.5);
+  -webkit-print-color-adjust: exact;
+  -webkit-filter: opacity(1);
 }
 
 .personal-information{
   box-shadow:  2px 2px 4px #9c9cae,
   -2px -2px 4px #e9e9ea;
+  -webkit-print-color-adjust: exact;
+  -webkit-filter: opacity(1);
 }

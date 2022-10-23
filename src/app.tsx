@@ -30,7 +30,7 @@ function App() {
           <Header />
         </Box>
         <div className="flex">
-          <div className="min-w-[140mm]">
+          <div className="min-w-[145mm]">
             <Box>
               <WorkExperience />
             </Box>
