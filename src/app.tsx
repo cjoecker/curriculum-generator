@@ -1,4 +1,4 @@
-import React, { ReactNode, useEffect } from 'react'
+import { ReactNode, useEffect } from 'react'
 import './app.css'
 
 import { Header } from './components/header'
@@ -8,7 +8,7 @@ import { WorkExperience } from './components/work-experience'
 
 import { Hobbies } from './components/hobbies'
 import { PERSONAL_INFORMATION } from './constants/curriculum-information'
-import {formatDate} from './utils/format-date';
+import { formatDate } from './utils/format-date'
 
 export const Box = ({ children }: { children: ReactNode | ReactNode[] }) => {
   return <div className="flex m-5 ">{children}</div>

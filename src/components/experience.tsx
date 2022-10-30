@@ -1,5 +1,5 @@
 import { ExperienceAndEducation } from '../constants/curriculum-information.models'
-import { formatTimePeriod} from '../utils/format-date';
+import { formatTimePeriod } from '../utils/format-date'
 
 interface ExperienceProps {
   experience: ExperienceAndEducation
@@ -26,7 +26,7 @@ export const Experience = ({ experience }: ExperienceProps) => {
                 <div className="text-xs italic -mt-0.5 ml-1">{description.tagsTitle}</div>
                 <div className="flex flex-wrap">
                   {description.tags.map((tag) => (
-                    <div className="chip rounded-full text-sm px-2 bg-white m-1" key={tag}>
+                    <div className="bg-tag rounded-full text-sm px-2 bg-white m-1" key={tag}>
                       {tag}
                     </div>
                   ))}

@@ -22,11 +22,12 @@ Project to generate my own beautiful curriculum in neumorphic style
    ```
    For different positions or university degrees in the same institution, you can add a new entry to the `positions` array
    For different activities or roles in the same position, you can add a new entry to the `descriptionBlocks` array
-3. Run `npm run start:dev`
-4. Play with the sizes on the CV to fill the page and make it look proportional. 
+3. Replace [candidate-image.jpeg](src/images/candidate-image.jpeg) with an image of yourself
+4. Run `npm run start:dev`
+5. Play with the sizes on the CV to fill the page and make it look proportional.
    For that, you can change the root font size on the `.html` class in [app.css](src/app.css).
    You can also adapt the column width from `min-w-[145mm]` in [app.tsx](src/app.css).
-5. Save as pdf using the printing function from Chrome (File > Print… > Save as pdf). 
+6. Save as pdf using the printing function from Chrome (File > Print… > Save as pdf).
    Remember to activate “Background graphics” in the printer configuration.
 
 ℹ️ You can save different versions of your CV in [curriculum-information-archive](src/constants/curriculum-information-archive) folder.

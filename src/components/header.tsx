@@ -1,5 +1,5 @@
 import * as React from 'react'
-import christian from '../images/christian.jpeg'
+import candidateImage from '../images/candidate-image.jpeg'
 import { PERSONAL_INFORMATION } from '../constants/curriculum-information'
 import { Link } from './link'
 
@@ -10,13 +10,8 @@ interface Props {
   altText: string
 }
 
-export const PersonalInformationItem = ({
-  icon,
-  text,
-  href,
-  altText,
-}: Props) => {
-    // eslint-disable-next-line unicorn/prefer-module
+export const PersonalInformationItem = ({ icon, text, href, altText }: Props) => {
+  // eslint-disable-next-line unicorn/prefer-module
   const icons = require.context('../images/', false)
   const iconSrc = icons(`./${icon}.svg`)
   const enhancedText = href ? <Link href={href}>{text}</Link> : <>{text}</>
@@ -35,7 +30,7 @@ export const Header = () => {
   return (
     <div className="flex flex-col gap-2">
       <div className="flex-grow-0 flex-shrink-0 flex gap-4">
-        <img alt="candidate" src={christian} className="rounded-xl w-40 h-40 object-cover" />
+        <img alt="candidate" src={candidateImage} className="rounded-xl w-40 h-40 object-cover" />
         <div className="flex-1 flex flex-col w-full justify-center">
           <h1 className="font-bold text-blue text-3xl">{PERSONAL_INFORMATION.name}</h1>
           <h2 className="text-lg font-bold">{PERSONAL_INFORMATION.title}</h2>

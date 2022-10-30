@@ -35,5 +35,3 @@ export type PeriodOfTime = {
   endDate: Date | 'today'
   descriptionBlocks: { text: ReactNode; tagsTitle: string; tags: string[] }[]
 }
-
-
