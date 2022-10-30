@@ -1,14 +1,11 @@
-import { formatDate } from '../app'
-import {
-  differenceInMonths,
-} from 'date-fns'
-import {ExperienceAndEducation, PeriodOfTime} from "../constants/curriculum-information.models";
+import { ExperienceAndEducation } from '../constants/curriculum-information.models'
+import { formatTimePeriod} from '../utils/format-date';
 
-interface ExperienceBlockProps {
+interface ExperienceProps {
   experience: ExperienceAndEducation
 }
 
-export const Experience = ({ experience }: ExperienceBlockProps) => {
+export const Experience = ({ experience }: ExperienceProps) => {
   return (
     <div className="mb-5 last:mb-0">
       <div className="leading-snug">
@@ -41,17 +38,4 @@ export const Experience = ({ experience }: ExperienceBlockProps) => {
       </div>
     </div>
   )
-}
-function formatTimePeriod(startDate: PeriodOfTime['startDate'], endDate: PeriodOfTime['endDate']) {
-  const newEndDate = endDate === 'today' ? new Date() : endDate
-
-  const distanceInYears = (differenceInMonths(newEndDate, startDate) + 1) / 12
-  const distance =
-    distanceInYears > 1
-      ? `${distanceInYears.toFixed(1).replace('.0','')}y`
-      : `${differenceInMonths(newEndDate, startDate)}m`
-
-  return endDate === 'today'
-    ? `${formatDate(startDate)} - Present  (${distance})`
-    : `${formatDate(startDate)} - ${formatDate(endDate)}  (${distance})`
 }

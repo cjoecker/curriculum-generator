@@ -11,7 +11,7 @@ export const PERSONAL_INFORMATION: PersonalInformation = {
   title: 'Best Developer',
   summary: (
     <>
-      Airedale who moved my cheese when the cheese comes out everybody's happy. Cheeseburger cheese
+      Airedale who moved my cheese when the cheese comes out everybody&apos;s happy. Cheeseburger cheese
       and wine danish fontina feta smelly cheese smelly cheese taleggio halloumi. Everyone loves
       stilton feta ricotta the big cheese cheese slices gouda dolcelatte. Gouda jarlsberg.
     </>
@@ -67,7 +67,7 @@ export const PERSONAL_INFORMATION: PersonalInformation = {
 export const LANGUAGES: Languages = [
   { language: 'English', level: 'Fluent' },
   { language: 'Esperanto', level: 'Fluent' },
-  { language: "Na'vi", level: 'Mother tongue' },
+  { language: 'Na\'vi', level: 'Mother tongue' },
   { language: 'Quenya', level: 'Good command' },
 ]
 
@@ -181,7 +181,7 @@ const okayCompany: ExperienceAndEducation = {
           text: (
             <p>
               Barkadeer to go on account league blow the man down aye Pirate Round nipperkin cutlass
-              Davy Jones' Locker marooned. Parrel cackle fruit dance the hempen jig poop deck
+              Davy Jones&apos; Locker marooned. Parrel cackle fruit dance the hempen jig poop deck
               man-of-war mutiny hogshead tack walk the plank gibbet. Matey lugger holystone
               boatswain bilged on her anchor warp interloper heave down pirate grog blossom.
             </p>
@@ -258,7 +258,7 @@ const master: ExperienceAndEducation = {
         {
           text: (
             <p>
-              Gangway mutiny fore killick Davy Jones' Locker lateen sail nipper dead men tell no tales schooner gaff. Tackle scurvy d
+              Gangway mutiny fore killick Davy Jones&apos; Locker lateen sail nipper dead men tell no tales schooner gaff. Tackle scurvy d
             </p>
           ),
           tagsTitle: 'Focus',

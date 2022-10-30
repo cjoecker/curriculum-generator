@@ -1,4 +1,3 @@
-import { Link } from '../components/link'
 import { ReactNode } from 'react'
 
 export type PersonalInformation = {

@@ -1,6 +1,5 @@
 import React, { ReactNode, useEffect } from 'react'
 import './app.css'
-import { darken } from 'polished'
 
 import { Header } from './components/header'
 import { Languages } from './components/languagues'
@@ -8,8 +7,8 @@ import { Education } from './components/education'
 import { WorkExperience } from './components/work-experience'
 
 import { Hobbies } from './components/hobbies'
-import { format } from 'date-fns'
 import { PERSONAL_INFORMATION } from './constants/curriculum-information'
+import {formatDate} from './utils/format-date';
 
 export const Box = ({ children }: { children: ReactNode | ReactNode[] }) => {
   return <div className="flex m-5 ">{children}</div>
@@ -59,7 +58,3 @@ function App() {
 }
 
 export default App
-
-export function formatDate(date: Date, showDay = false) {
-  return showDay ? format(date, 'MMM dd, yyyy') : format(date, 'MMM, yyyy')
-}

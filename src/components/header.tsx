@@ -3,7 +3,7 @@ import christian from '../images/christian.jpeg'
 import { PERSONAL_INFORMATION } from '../constants/curriculum-information'
 import { Link } from './link'
 
-interface PersonalInformationItemProps {
+interface Props {
   icon: string
   text: string
   href?: string
@@ -15,7 +15,8 @@ export const PersonalInformationItem = ({
   text,
   href,
   altText,
-}: PersonalInformationItemProps) => {
+}: Props) => {
+    // eslint-disable-next-line unicorn/prefer-module
   const icons = require.context('../images/', false)
   const iconSrc = icons(`./${icon}.svg`)
   const enhancedText = href ? <Link href={href}>{text}</Link> : <>{text}</>
