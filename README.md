@@ -1,7 +1,8 @@
 # Curriculum Generator
 
 Project to generate my own beautiful curriculum in neumorphic style
-![curriculum example](/src/images/cv-example.png)
+![curriculum example](/src/images/cv-example.jpg)
+
 
 ## How to use
 
