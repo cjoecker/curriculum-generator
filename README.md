@@ -6,8 +6,7 @@ Project to generate my own beautiful curriculum in neumorphic style
   <img src="https://user-images.githubusercontent.com/46030630/198880892-91193d3d-f98c-4bff-aa41-2730f518610d.png" alt="drawing" width="400"/>
 </p>
 
-
-
+👆In [this article](https://medium.com/@c.jocker/best-way-to-convert-a-react-page-to-pdf-489a9fda36f0) I describe the best way to generate PDFs with react
 
 ## How to use
 
