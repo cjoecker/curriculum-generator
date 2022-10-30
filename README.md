@@ -1,7 +1,11 @@
 # Curriculum Generator
 
 Project to generate my own beautiful curriculum in neumorphic style
-<img src="/src/images/cv-example.jpg" alt="drawing" width="400"/>
+
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/46030630/198880892-91193d3d-f98c-4bff-aa41-2730f518610d.png" alt="drawing" width="400"/>
+</p>
+
 
 
 
