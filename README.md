@@ -30,5 +30,5 @@ Project to generate my own beautiful curriculum in neumorphic style
 6. Save as pdf using the printing function from Chrome (File > Print… > Save as pdf).
    Remember to activate “Background graphics” in the printer configuration.
 
-ℹ️ You can save different versions of your CV in [curriculum-information-archive](src/constants/curriculum-information-archive) folder.
+ℹ️ You can save different versions of your CV in [curriculum-information-archive](curriculum-information-archive) folder.
 For example, in different languages of for different companies. That folder is in `.gitignore`
