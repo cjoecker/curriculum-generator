@@ -1,11 +1,11 @@
-import { ExperienceType, Position } from '../constants/curriculum-information'
 import { formatDate } from '../app'
 import {
   differenceInMonths,
 } from 'date-fns'
+import {ExperienceAndEducation, PeriodOfTime} from "../constants/curriculum-information.models";
 
 interface ExperienceBlockProps {
-  experience: ExperienceType
+  experience: ExperienceAndEducation
 }
 
 export const Experience = ({ experience }: ExperienceBlockProps) => {
@@ -26,11 +26,11 @@ export const Experience = ({ experience }: ExperienceBlockProps) => {
             {position.descriptionBlocks.map((description, index) => (
               <div className="mb-3 mt-1" key={index}>
                 <div className="text-sm">{description.text}</div>
-                <div className="text-xs italic -mt-0.5 ml-1">{description.chipsTitle}</div>
+                <div className="text-xs italic -mt-0.5 ml-1">{description.tagsTitle}</div>
                 <div className="flex flex-wrap">
-                  {description.chips.map((chip) => (
-                    <div className="chip rounded-full text-sm px-2 bg-white m-1" key={chip}>
-                      {chip}
+                  {description.tags.map((tag) => (
+                    <div className="chip rounded-full text-sm px-2 bg-white m-1" key={tag}>
+                      {tag}
                     </div>
                   ))}
                 </div>
@@ -42,7 +42,7 @@ export const Experience = ({ experience }: ExperienceBlockProps) => {
     </div>
   )
 }
-function formatTimePeriod(startDate: Position['startDate'], endDate: Position['endDate']) {
+function formatTimePeriod(startDate: PeriodOfTime['startDate'], endDate: PeriodOfTime['endDate']) {
   const newEndDate = endDate === 'today' ? new Date() : endDate
 
   const distanceInYears = (differenceInMonths(newEndDate, startDate) + 1) / 12
