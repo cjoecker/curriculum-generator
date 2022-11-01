@@ -18,7 +18,7 @@ export const PersonalInformationItem = ({ icon, text, href, altText }: Props) =>
 
   return (
     <div className="flex ">
-      <div className="personal-information rounded-full h-8 min-w-[2rem] flex justify-center my-auto">
+      <div className="bg-information-circle rounded-full h-8 min-w-[2rem] flex justify-center my-auto">
         <img src={iconSrc} alt={altText} className="m-auto h-5 w-5" />
       </div>
       <div className="whitespace-pre-wrap leading-4 leading-5 ml-2 my-auto">{enhancedText}</div>
