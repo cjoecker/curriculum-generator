@@ -6,7 +6,7 @@ export const Languages = () => {
     <div className="flex flex-col mb-4">
       <Title label="Languages" />
       {LANGUAGES.map((l) => (
-        <div className="flex-1">
+        <div className="flex-1" key={l.language}>
           <span className="font-bold">{`${l.language}: `}</span>
           <span className="whitespace-pre-wrap">{l.level}</span>
         </div>
