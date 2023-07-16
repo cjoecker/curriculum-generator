@@ -11,7 +11,7 @@ export type PersonalInformation = {
       | 'phone'
       | 'email'
       | 'github'
-      | 'twitter'
+      | 'web'
       | 'linkedin'
       | 'passport'
     altText: string
