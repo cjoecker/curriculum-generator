@@ -5,7 +5,7 @@ import { Experience } from './experience'
 export const WorkExperience = () => {
   return (
     <div className="flex flex-col">
-      <Title label={'Work Experience'} />
+      <Title label={'Experiencia Laboral'} />
       {EXPERIENCE.map((experienceBlock) => (
         <Experience experience={experienceBlock} key={experienceBlock.institution} />
       ))}

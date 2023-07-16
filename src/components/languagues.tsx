@@ -4,7 +4,7 @@ import { LANGUAGES } from '../constants/curriculum-information'
 export const Languages = () => {
   return (
     <div className="flex flex-col mb-4">
-      <Title label="Languages" />
+      <Title label="Idiomas" />
       {LANGUAGES.map((l) => (
         <div className="flex-1" key={l.language}>
           <span className="font-bold">{`${l.language}: `}</span>
