@@ -20,6 +20,8 @@
 # production
 /build
 
+.idea
+
 # misc
 .DS_Store
 *.pem
@@ -39,3 +41,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+src/constants/archive
+export.pdf
+
+src/constants/curriculum-information*

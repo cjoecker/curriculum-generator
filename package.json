@@ -4,15 +4,16 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev --turbopack",
+		"export:pdf": "tsx src/utils/export-pdf.ts",
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"check:all": "pnpm lint . && pnpm format --check . && pnpm check-types",
-		"fix:all": "pnpm lint-fix:all && pnpm format:all && pnpm check-types",
+		"check:all": "npm run lint . && npm run format -- --check . && npm run check-types",
+		"fix:all": "npm run lint-fix:all && npm run format:all && npm run check-types",
 		"check-types": "tsc --noEmit --incremental",
-		"lint-fix:all": "pnpm lint --fix .",
-		"format": "prettier",
-		"format:all": "pnpm format --write ."
+		"lint-fix:all": "npm run lint -- --fix .",
+		"format": "npx prettier",
+		"format:all": "npx prettier --write ."
 	},
 	"dependencies": {
 		"date-fns": "^4.1.0",
@@ -41,6 +42,7 @@
 		"puppeteer": "^24.7.0",
 		"puppeteer-core": "^24.7.0",
 		"tailwindcss": "^4",
+		"tsx": "^4.19.3",
 		"typescript": "^5"
 	}
 }
