@@ -5,14 +5,40 @@ import candidateImage from "../../public/images/candidate-image.jpeg";
 
 import { Link } from "./link";
 import { useCvData } from '@/utils/use-cv-data'
+import { Tag } from '@/components/tag'
+import { PersonalInformation, TagInformation } from "@/cv-info/get-cv-data";
+import { ReactNode } from "react";
+import { LocationIcon } from "@/icons/LocationIcon";
+import { BirthdayIcon } from "@/icons/BirthdayIcon";
+import { PhoneIcon } from "@/icons/PhoneIcon";
+import { EmailIcon } from "@/icons/EmailIcon";
+import { PassportIcon } from "@/icons/PassportIcon";
+import { LinkedInIcon } from "@/icons/LinkedInIcon";
+import { WebIcon } from "@/icons/WebIcon";
+import { TwitterIcon } from "@/icons/TwitterIcon";
+import { GitHubIcon } from "@/icons/GitHubIcon";
 
 
 interface Props {
-	icon: string;
+	icon: TagInformation["icon"];
 	text: string;
 	href?: string;
 	altText: string;
 }
+
+const icons:Record<TagInformation["icon"], ReactNode> = {
+	location: <LocationIcon />,
+	birthday: <BirthdayIcon />,
+	phone: <PhoneIcon />,
+	email: <EmailIcon />,
+	github: <GitHubIcon />,
+	twitter: <TwitterIcon />,
+	web: <WebIcon />,
+	linkedin: <LinkedInIcon />,
+	passport: <PassportIcon />,
+}
+
+const ICON_SIZE = 14;
 
 export const PersonalInformationItem = ({
 	icon,
@@ -20,21 +46,20 @@ export const PersonalInformationItem = ({
 	href,
 	altText,
 }: Props) => {
-	const iconSrc = `./images/${icon}.svg`;
+	const iconSvg = icons[icon as TagInformation["icon"]];
 	const enhancedText = href ? <Link href={href}>{text}</Link> : <>{text}</>;
 
 	return (
 		<div className="flex">
-			<div className="bg-information-circle my-auto flex h-8 min-w-[2rem] justify-center rounded-full">
-				<Image
-					width={24}
-					height={24}
-					src={iconSrc}
-					alt={altText}
-					className="m-auto h-5 w-5"
-				/>
-			</div>
-			<div className="my-auto ml-2 leading-4 leading-5 whitespace-pre-wrap">
+			<Tag circularSize={24}>
+				<div style={{
+					width: ICON_SIZE,
+					height: ICON_SIZE,
+				}} className="m-auto flex items-center justify-center">
+				{iconSvg}
+				</div>
+			</Tag>
+			<div className="my-auto ml-1 leading-4 whitespace-pre-wrap" aria-label={altText}>
 				{enhancedText}
 			</div>
 		</div>
@@ -54,7 +79,7 @@ export const Header = () => {
 					className="h-40 w-40 rounded-xl object-cover"
 				/>
 				<div className="flex w-full flex-1 flex-col justify-center">
-					<h1 className="text-3xl font-bold text-sky-800">
+					<h1 className="text-3xl font-bold text-(--subtitle-color)">
 						{data?.personalInformation.name}
 					</h1>
 					<h2 className="text-lg font-bold">{data?.personalInformation.title}</h2>

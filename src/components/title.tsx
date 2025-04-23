@@ -1,5 +1,5 @@
 export const Title = ({ label }: { label: string }) => {
 	return (
-		<h3 className="mb-1.5 text-lg font-bold text-sky-800 uppercase">{label}</h3>
+		<h3 className="mb-1.5 text-lg font-bold text-(--subtitle-color) uppercase">{label}</h3>
 	);
 };

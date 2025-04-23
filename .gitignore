@@ -44,6 +44,6 @@ next-env.d.ts
 
 export.pdf
 
-# Ignore everything in src/cv-info/languages
+# Ignore everything in src/cv-info/languages but not the template
 src/cv-info/languages/*
 !src/cv-info/languages/template.tsx

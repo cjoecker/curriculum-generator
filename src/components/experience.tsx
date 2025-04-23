@@ -1,5 +1,6 @@
 import { ExperienceAndEducation } from "@/cv-info/get-cv-data";
 import { formatTimePeriod } from "../utils/format-date";
+import { Tag } from '@/components/tag'
 
 interface ExperienceProps {
 	experience: ExperienceAndEducation;
@@ -18,25 +19,24 @@ export const Experience = ({ experience }: ExperienceProps) => {
 					return (
 						<div className="mb-5 last:mb-0" key={position.title}>
 							<span className="underline decoration-1">{position.title}</span>
-							<span className="ml-2 text-sky-800">
+							<span className="ml-2 text-(--subtitle-color)">
 								{formatTimePeriod(position.startDate, position.endDate)}
 							</span>
 							{position.descriptionBlocks.map((description, index) => {
 								return (
 									<div className="mt-1 mb-3" key={index}>
 										<div className="text-sm">{description.text}</div>
-										<div className="-mt-0.5 ml-1 text-xs italic">
+										<div className="-mt-0.5 text-xs italic text-(--subtitle-color)">
 											{description.tagsTitle}
 										</div>
-										<div className="flex flex-wrap">
-											{description.tags.map((tag) => {
+										<div className="flex flex-wrap gap-1.5 mt-1">
+											{description.tags.map((text) => {
 												return (
-													<div
-														className="bg-tag m-1 rounded-full bg-white px-2 text-sm"
-														key={tag}
+													<Tag
+														key={text}
 													>
-														{tag}
-													</div>
+														{text}
+													</Tag>
 												);
 											})}
 										</div>

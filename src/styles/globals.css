@@ -2,7 +2,6 @@
 
 @theme inline {
 	--color-background: var(--background);
-	--color-foreground: var(--foreground);
 	--font-sans: var(--font-quicksand);
 }
 
@@ -11,8 +10,8 @@ html {
 }
 
 :root {
-	--background: linear-gradient(130deg, rgb(227, 227, 241), rgb(200, 200, 227));
-	--foreground: #171717;
+	--background: linear-gradient(130deg, #0f0823, #150b2e);
+	--subtitle-color: #7ad9ea;
 }
 
 .bg-main {
@@ -59,4 +58,18 @@ p {
 		-2px -2px 4px #e9e9ea;
 	-webkit-print-color-adjust: exact;
 	-webkit-filter: opacity(1);
+}
+
+
+@theme {
+	--color-primary: #11c0ff;
+	--color-secondary: #ffffff;
+	--color-pink: #FF00E5;
+	--color-purple: #8F00FF;
+	--color-turquoise: #00DFD8;
+	--color-blue: #007CF0;
+	--color-green: #00FFA3;
+	--color-grey: #656565;
+	--color-neutral: #271b31;
+	--color-neutral-dark: #130d18;
 }

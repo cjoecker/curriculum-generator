@@ -8,25 +8,27 @@ export type CvData = {
 	education: ExperienceAndEducation[];
 };
 
+export type TagInformation = {
+	icon:
+		| "location"
+		| "birthday"
+		| "phone"
+		| "email"
+		| "github"
+		| "twitter"
+		| "web"
+		| "linkedin"
+		| "passport";
+	altText: string;
+	text: string;
+	href?: string;
+}
+
 export type PersonalInformation = {
 	name: string;
 	title: string;
 	summary: ReactNode;
-	tags: {
-		icon:
-			| "location"
-			| "birthday"
-			| "phone"
-			| "email"
-			| "github"
-			| "twitter"
-			| "web"
-			| "linkedin"
-			| "passport";
-		altText: string;
-		text: string;
-		href?: string;
-	}[];
+	tags: TagInformation[];
 };
 
 export type Languages = { language: string; level: string }[];
