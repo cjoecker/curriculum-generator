@@ -1,84 +1,48 @@
 {
-  "name": "curriculum-generator",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "start": "react-scripts start",
-    "start:dev": "cross-env ESLINT_NO_DEV_ERRORS=true react-scripts start",
-    "export:pdf": "tsx src/utils/export-pdf.ts",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "format": "prettier --write",
-    "lint": "eslint --max-warnings=0",
-    "lint:fix": "pnpm lint --fix",
-    "lint:all": "pnpm lint .",
-    "lint:fix:all": "pnpm lint --fix .",
-    "check-types": "tsc --noemit -p tsconfig.json --incremental",
-    "prepare": "husky install"
-  },
-  "lint-staged": {
-    "*/src/*.+(ts|tsx)": [
-      "npm run format",
-      "npm run lint:fix"
-    ]
-  },
-  "dependencies": {
-    "@react-pdf/renderer": "^3.0.0",
-    "buffer": "^6.0.3",
-    "date-fns": "^2.29.3",
-    "polished": "^4.2.2",
-    "puppeteer": "^20.8.2",
-    "puppeteer-core": "^20.8.2",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
-    "tsx": "^3.12.7",
-    "typescript": "^4.8.4",
-    "web-vitals": "^2.1.4"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "devDependencies": {
-    "@testing-library/jest-dom": "^5.16.5",
-    "@types/node": "^16.11.65",
-    "@types/react": "^18.0.21",
-    "@types/react-dom": "^18.0.6",
-    "@types/webpack-env": "^1.18.0",
-    "@typescript-eslint/eslint-plugin": "^5.13.0",
-    "@typescript-eslint/parser": "^5.0.0",
-    "autoprefixer": "^10.4.12",
-    "cross-env": "^7.0.3",
-    "eslint": "^8.25.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.25.3",
-    "eslint-plugin-jsx-a11y": "^6.6.1",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.28.0",
-    "eslint-plugin-react-hooks": "^4.3.0",
-    "eslint-plugin-unicorn": "^44.0.2",
-    "eslint-plugin-unused-imports": "^2.0.0",
-    "husky": "^8.0.1",
-    "postcss": "^8.4.18",
-    "prettier": "^2.7.1",
-    "tailwindcss": "^3.1.8"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+	"name": "curriculum-generator",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev --turbopack",
+		"export:pdf": "tsx src/utils/export-pdf.ts",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"check:all": "npm run lint . && npm run format -- --check . && npm run check-types",
+		"fix:all": "npm run lint-fix:all && npm run format:all && npm run check-types",
+		"check-types": "tsc --noEmit --incremental",
+		"lint-fix:all": "npm run lint -- --fix .",
+		"format": "npx prettier",
+		"format:all": "npx prettier --write ."
+	},
+	"dependencies": {
+		"date-fns": "^4.1.0",
+		"next": "15.3.1",
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0"
+	},
+	"devDependencies": {
+		"@eslint/eslintrc": "^3",
+		"@tailwindcss/postcss": "^4",
+		"@types/node": "^20",
+		"@types/react": "^19",
+		"@types/react-dom": "^19",
+		"eslint": "^9",
+		"eslint-config-next": "15.3.1",
+		"eslint-config-prettier": "^10.1.2",
+		"eslint-plugin-import": "^2.31.0",
+		"eslint-plugin-jsx-a11y": "^6.10.2",
+		"eslint-plugin-prettier": "^5.2.6",
+		"eslint-plugin-react": "^7.37.5",
+		"eslint-plugin-react-hooks": "^5.2.0",
+		"eslint-plugin-unicorn": "^58.0.0",
+		"eslint-plugin-unused-imports": "^4.1.4",
+		"prettier": "^3.5.3",
+		"prettier-plugin-tailwindcss": "^0.6.11",
+		"puppeteer": "^24.7.0",
+		"puppeteer-core": "^24.7.0",
+		"tailwindcss": "^4",
+		"tsx": "^4.19.3",
+		"typescript": "^5"
+	}
 }
