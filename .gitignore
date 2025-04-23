@@ -42,7 +42,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-src/constants/archive
 export.pdf
 
-src/constants/curriculum-information*
+# Ignore everything in src/cv-info/languages
+src/cv-info/languages/*
+!src/cv-info/languages/template.tsx

@@ -1,12 +1,13 @@
-import { LANGUAGES } from "../constants/curriculum-information";
 
 import { Title } from "./title";
+import { useCvData } from '@/utils/use-cv-data'
 
 export const Languages = () => {
+	const data = useCvData();
 	return (
 		<div className="mb-4 flex flex-col">
 			<Title label="Languages" />
-			{LANGUAGES.map((l) => {
+			{data?.languages.map((l) => {
 				return (
 					<div className="flex-1" key={l.language}>
 						<span className="font-bold">{`${l.language}: `}</span>

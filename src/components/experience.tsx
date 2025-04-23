@@ -1,4 +1,4 @@
-import { ExperienceAndEducation } from "../constants/curriculum-information.models";
+import { ExperienceAndEducation } from "@/cv-info/get-cv-data";
 import { formatTimePeriod } from "../utils/format-date";
 
 interface ExperienceProps {

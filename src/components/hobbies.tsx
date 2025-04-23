@@ -1,12 +1,13 @@
-import { HOBBIES } from "../constants/curriculum-information";
 
 import { Title } from "./title";
+import { useCvData } from '@/utils/use-cv-data'
 
 export const Hobbies = () => {
+	const data = useCvData();
 	return (
 		<div className="flex flex-col">
 			<Title label="Hobbies & Projects" />
-			{HOBBIES}
+			{data?.hobbies}
 		</div>
 	);
 };

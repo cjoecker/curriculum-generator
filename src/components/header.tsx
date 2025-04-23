@@ -4,8 +4,8 @@ import * as React from "react";
 import candidateImage from "../../public/images/candidate-image.jpeg";
 
 import { Link } from "./link";
+import { useCvData } from '@/utils/use-cv-data'
 
-import { PERSONAL_INFORMATION } from "@/constants/curriculum-information";
 
 interface Props {
 	icon: string;
@@ -42,6 +42,7 @@ export const PersonalInformationItem = ({
 };
 
 export const Header = () => {
+	const data = useCvData();
 	return (
 		<div className="flex flex-col gap-2">
 			<div className="flex flex-shrink-0 flex-grow-0 gap-4">
@@ -54,15 +55,15 @@ export const Header = () => {
 				/>
 				<div className="flex w-full flex-1 flex-col justify-center">
 					<h1 className="text-3xl font-bold text-sky-800">
-						{PERSONAL_INFORMATION.name}
+						{data?.personalInformation.name}
 					</h1>
-					<h2 className="text-lg font-bold">{PERSONAL_INFORMATION.title}</h2>
-					<p className="mt-2 text-sm">{PERSONAL_INFORMATION.summary}</p>
+					<h2 className="text-lg font-bold">{data?.personalInformation.title}</h2>
+					<p className="mt-2 text-sm">{data?.personalInformation.summary}</p>
 				</div>
 			</div>
 			<div className="flex flex-1 flex-col">
 				<div className="grid w-full grid-cols-4 gap-2">
-					{PERSONAL_INFORMATION.tags.map((t) => {
+					{data?.personalInformation.tags.map((t) => {
 						return (
 							<PersonalInformationItem
 								key={t.altText}
