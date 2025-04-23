@@ -1,11 +1,11 @@
-import { Link } from "../components/link";
+import { Link } from "../../components/link";
 
 import {
 	ExperienceAndEducation,
 	Hobbies,
 	Languages,
 	PersonalInformation,
-} from "./curriculum-information.models";
+} from "../get-cv-data";
 
 export const PERSONAL_INFORMATION: PersonalInformation = {
 	name: "John Doe",
