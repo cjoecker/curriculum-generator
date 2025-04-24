@@ -18,7 +18,7 @@ export const Experience = ({ experience }: ExperienceProps) => {
 				{experience.positions.map((position) => {
 					return (
 						<div className="mb-5 last:mb-0" key={position.title}>
-							<span className=" font-bold text-lg/1">{position.title}</span>
+							<span className=" font-bold text-lg/1 text-white">{position.title}</span>
 							<span className="ml-2 text-(--subtitle-color)">
 								{formatTimePeriod(position.startDate, position.endDate)}
 							</span>
