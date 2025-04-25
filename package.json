@@ -4,7 +4,8 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev --turbopack",
-		"export:pdf": "tsx src/utils/export-pdf.ts",
+		"export:pdf-en": "tsx src/utils/export-pdf.ts en",
+		"export:pdf-de": "tsx src/utils/export-pdf.ts de",
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",

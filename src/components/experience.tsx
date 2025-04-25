@@ -1,12 +1,16 @@
 import { ExperienceAndEducation } from "@/cv-info/get-cv-data";
 import { formatTimePeriod } from "../utils/format-date";
 import { Tag } from '@/components/tag'
+import { useSearchParams } from "next/navigation";
 
 interface ExperienceProps {
 	experience: ExperienceAndEducation;
 }
 
 export const Experience = ({ experience }: ExperienceProps) => {
+	const searchParams = useSearchParams();
+	const lang = searchParams.get("lang") ?? undefined;
+
 	return (
 		<div className="mb-5 last:mb-0">
 			<div className="leading-snug mb-1">
@@ -20,7 +24,7 @@ export const Experience = ({ experience }: ExperienceProps) => {
 						<div className="mb-5 last:mb-0" key={position.title}>
 							<span className=" font-bold text-lg/1 text-white">{position.title}</span>
 							<span className="ml-2 text-(--subtitle-color)">
-								{formatTimePeriod(position.startDate, position.endDate)}
+								{formatTimePeriod(position.startDate, position.endDate, lang)}
 							</span>
 							{position.descriptionBlocks.map((description, index) => {
 								return (
