@@ -27,7 +27,7 @@ const present: Record<string, string> = {
 export function formatTimePeriod(
 	startDate: PeriodOfTime["startDate"],
 	endDate: PeriodOfTime["endDate"],
-	lang: string,
+	lang: string = "en",
 ) {
 	const newEndDate = endDate === "today" ? new Date() : endDate;
 	const year= yearAbbreviation[lang] ?? yearAbbreviation.en;

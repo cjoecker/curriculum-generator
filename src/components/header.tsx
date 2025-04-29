@@ -17,6 +17,8 @@ import { LinkedInIcon } from "@/icons/LinkedInIcon";
 import { WebIcon } from "@/icons/WebIcon";
 import { TwitterIcon } from "@/icons/TwitterIcon";
 import { GitHubIcon } from "@/icons/GitHubIcon";
+import meshImage from "../../public/images/mesh-purple-turquoise.svg";
+
 
 
 interface Props {
@@ -51,7 +53,7 @@ export const PersonalInformationItem = ({
 
 	return (
 		<div className="flex">
-			<Tag circularSize={24}>
+			<Tag circularSize={24} dark={true}>
 				<div style={{
 					width: ICON_SIZE,
 					height: ICON_SIZE,
@@ -59,7 +61,7 @@ export const PersonalInformationItem = ({
 				{iconSvg}
 				</div>
 			</Tag>
-			<div className="my-auto ml-1 leading-4 whitespace-pre-wrap" aria-label={altText}>
+			<div className="my-auto ml-1.5 leading-4 whitespace-pre-wrap" aria-label={altText}>
 				{enhancedText}
 			</div>
 		</div>
@@ -69,24 +71,23 @@ export const PersonalInformationItem = ({
 export const Header = () => {
 	const data = useCvData();
 	return (
-		<div className="flex flex-col gap-2">
-			<div className="flex flex-shrink-0 flex-grow-0 gap-4">
+		<div className="flex flex-col gap-2 relative
+		 p-4 bg-main text-white overflow-hidden rounded-b">
+			<div className="flex flex-shrink-0 flex-grow-0 gap-4 relative z-10">
 				<Image
 					alt="candidate"
-					width={240}
-					height={240}
 					src={candidateImage}
-					className="h-40 w-40 rounded-xl object-cover"
+					className="h-[33mm] w-[33mm] rounded object-cover"
 				/>
 				<div className="flex w-full flex-1 flex-col justify-center">
-					<h1 className="text-3xl font-bold text-(--subtitle-color)">
+					<h1 className="text-3xl font-bold text-[#9fd0f9]">
 						{data?.personalInformation.name}
 					</h1>
 					<h2 className="text-lg font-bold">{data?.personalInformation.title}</h2>
 					<p className="mt-2 text-sm">{data?.personalInformation.summary}</p>
 				</div>
 			</div>
-			<div className="flex flex-1 flex-col">
+			<div className="flex flex-1 flex-col relative z-10">
 				<div className="grid w-full grid-cols-4 gap-2">
 					{data?.personalInformation.tags.map((t) => {
 						return (
@@ -101,6 +102,12 @@ export const Header = () => {
 					})}
 				</div>
 			</div>
+			<Image
+				aria-hidden={true}
+				alt={""}
+				src={meshImage}
+				className="absolute flex right-[-30mm] top-[-50mm] z-0 h-[150mm] w-[450mm]"
+			/>
 		</div>
 	);
 };

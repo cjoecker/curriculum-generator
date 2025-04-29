@@ -14,8 +14,6 @@
 	--color-blue: #007CF0;
 	--color-green: #00FFA3;
 	--color-grey: #656565;
-	--color-neutral: #271b31;
-	--color-neutral-dark: #130d18;
 }
 
 
@@ -25,20 +23,11 @@ html {
 
 :root {
 	--background: linear-gradient(130deg, #0f0823, #150b2e);
-	--subtitle-color: #7ad9ea;
+	--subtitle-color: #342977;
 }
 
 .bg-main {
 	background: var(--background);
-}
-
-@media print {
-	html {
-		background: var(--background);
-	}
-	.bg-main {
-		background: initial;
-	}
 }
 
 a:after {
