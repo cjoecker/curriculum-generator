@@ -1,5 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+.idea
+
 # dependencies
 /node_modules
 /.pnp
@@ -36,7 +38,7 @@
 *.tsbuildinfo
 next-env.d.ts
 
-cv-*
+cv-*.pdf
 
 # Ignore everything in src/cv-info/languages but not the template
 src/cv-info/languages/*
