@@ -85,7 +85,7 @@ export const Header = () => {
 				<Image
 					alt="candidate"
 					src={candidateImage}
-					className="h-[33mm] w-[33mm] rounded object-cover"
+					className="h-[35mm] w-[35mm] rounded object-cover"
 				/>
 				<div className="flex w-full flex-1 flex-col justify-center">
 					<h1 className="text-3xl font-bold text-[#9fd0f9]">

@@ -1,4 +1,4 @@
-import { Quicksand } from "next/font/google";
+import { Red_Hat_Display } from "next/font/google";
 import * as React from "react";
 
 import { Education } from "@/components/education";
@@ -8,8 +8,8 @@ import { Hobbies } from "@/components/hobbies";
 import { Languages } from "@/components/languagues";
 import { WorkExperience } from "@/components/work-experience";
 
-const quicksandSans = Quicksand({
-	variable: "--font-quicksand",
+const quicksandSans = Red_Hat_Display({
+	variable: "--font-main",
 	subsets: ["latin"],
 });
 

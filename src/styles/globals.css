@@ -2,7 +2,7 @@
 
 @theme inline {
 	--color-background: var(--background);
-	--font-sans: var(--font-quicksand);
+	--font-sans: var(--font-main);
 }
 
 @theme {
@@ -10,7 +10,7 @@
 }
 
 html {
-	font-size: 12.3px;
+	font-size: 12.2px;
 }
 
 :root {
