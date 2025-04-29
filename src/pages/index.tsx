@@ -18,10 +18,10 @@ export default function Home() {
 		<div
 			className={`flex h-screen w-screen ${quicksandSans.className} font-quicksand`}
 		>
-			<div className="relative mx-auto h-[296mm] w-[210mm] overflow-hidden border-1">
+			<div className="relative mx-auto h-[296mm] w-[210mm] overflow-hidden">
 				<div className="relative z-10">
 					<Header />
-					<div className="flex gap-6 px-4 py-2">
+					<div className="flex gap-6 px-4 mt-1 py-2">
 						<div className="min-w-[145mm]">
 							<WorkExperience />
 						</div>
