@@ -4,6 +4,7 @@ import { formatTimePeriod } from "../utils/format-date";
 
 import { Tag } from "@/components/tag";
 import { ExperienceAndEducation } from "@/cv-info/get-cv-data";
+import { Markdown } from "@/components/markdown";
 
 interface ExperienceProps {
 	experience: ExperienceAndEducation;
@@ -33,7 +34,7 @@ export const Experience = ({ experience }: ExperienceProps) => {
 							{position.descriptionBlocks.map((description, index) => {
 								return (
 									<div className="mt-1 mb-3" key={index}>
-										<div className="text-sm">{description.text}</div>
+										<div className="text-sm"><Markdown>{description.text}</Markdown></div>
 										<div className="text-subtitle -mt-0.5 text-xs italic">
 											{description.tagsTitle}
 										</div>

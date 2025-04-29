@@ -46,7 +46,7 @@ export const PersonalInformationItem = ({
 	altText,
 }: Props) => {
 	const iconSvg = icons[icon as TagInformation["icon"]];
-	const enhancedText = href ? <Link href={href}>{text}</Link> : <>{text}</>;
+	const enhancedText = href ? <Link dark href={href}>{text}</Link> : <>{text}</>;
 
 	return (
 		<div className="flex">
@@ -92,7 +92,7 @@ export const Header = () => {
 				</div>
 			</div>
 			<div className="relative z-10 flex flex-1 flex-col">
-				<div className="grid w-full grid-cols-4 gap-2">
+				<div className="grid w-full grid-cols-4 gap-2 px-2">
 					{data?.personalInformation.tags.map((t) => {
 						return (
 							<PersonalInformationItem

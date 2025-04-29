@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 export type CvData = {
 	personalInformation: PersonalInformation;
 	languages: Languages;
-	hobbies: Hobbies;
+	hobbies: string;
 	experience: ExperienceAndEducation[];
 	education: ExperienceAndEducation[];
 };
@@ -32,7 +32,7 @@ export type PersonalInformation = {
 
 export type Languages = { language: string; level: string }[];
 
-export type Hobbies = ReactNode;
+export type Hobbies = string;
 
 export type ExperienceAndEducation = {
 	institution: string;
@@ -43,7 +43,7 @@ export type PeriodOfTime = {
 	title: string;
 	startDate: Date;
 	endDate: Date | "today";
-	descriptionBlocks: { text: ReactNode; tagsTitle: string; tags: string[] }[];
+	descriptionBlocks: { text: string; tagsTitle: string; tags: string[] }[];
 };
 export function getCvData(lang: string = "TEMPLATE"): Promise<CvData> {
 	const path = `./languages/${lang.toLowerCase()}`;
