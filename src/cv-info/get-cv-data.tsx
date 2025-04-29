@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 
 export type CvData = {
+	documentTitle: string;
 	personalInformation: PersonalInformation;
 	languages: Languages;
 	hobbies: string;
@@ -49,7 +50,13 @@ export function getCvData(lang: string = "TEMPLATE"): Promise<CvData> {
 	const path = `./languages/${lang.toLowerCase()}`;
 
 	return import(path).then((module) => {
+		const nameLower = module.PERSONAL_INFORMATION.name
+			.toLowerCase()
+			.replaceAll(" ", "_");
+		const documentTitle = `cv_${lang}_${nameLower}`;
+
 		return {
+			documentTitle,
 			personalInformation: module.PERSONAL_INFORMATION,
 			languages: module.LANGUAGES,
 			hobbies: module.HOBBIES,

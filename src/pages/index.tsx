@@ -1,4 +1,5 @@
 import { Red_Hat_Display } from "next/font/google";
+import Head from "next/head";
 import * as React from "react";
 
 import { Education } from "@/components/education";
@@ -7,6 +8,7 @@ import { Header } from "@/components/header";
 import { Hobbies } from "@/components/hobbies";
 import { Languages } from "@/components/languagues";
 import { WorkExperience } from "@/components/work-experience";
+import { useCvData } from "@/utils/use-cv-data";
 
 const quicksandSans = Red_Hat_Display({
 	variable: "--font-main",
@@ -14,10 +16,14 @@ const quicksandSans = Red_Hat_Display({
 });
 
 export default function Home() {
+	const data = useCvData();
 	return (
 		<div
 			className={`flex h-screen w-screen ${quicksandSans.className} font-quicksand`}
 		>
+			<Head>
+				<title>{data?.documentTitle}</title>
+			</Head>
 			<div className="relative mx-auto h-[296mm] w-[210mm] overflow-hidden">
 				<div className="relative z-10">
 					<Header />
