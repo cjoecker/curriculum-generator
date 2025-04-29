@@ -9,8 +9,10 @@ import puppeteer from "puppeteer";
 
 	await page.goto(`http://localhost:3000/?lang=${lang}`, { waitUntil: "networkidle2" });
 
+	const fileName = `cv-${lang}-christian-joecker.pdf`;
+
 	await page.pdf({
-		path: "export.pdf",
+		path: fileName,
 		format: "A4",
 		omitBackground: false,
 		printBackground: true,
