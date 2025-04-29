@@ -8,8 +8,7 @@ const Icon = (props: React.SVGProps<SVGSVGElement>) => {
 			fill="currentColor"
 			{...props}
 		>
-			{/* Replace the content below with the actual SVG paths */}
-			{/* ...existing SVG paths from public/images/icon.svg... */}
+			{props.children}
 		</svg>
 	);
 };

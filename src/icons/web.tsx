@@ -1,20 +1,8 @@
-import React from "react";
+import Icon from "@/components/icon";
 
-interface IconProps {
-	className?: string;
-	size?: number;
-}
-
-export const WebIcon: React.FC<IconProps> = ({ className = "", size = 24 }) => {
+export function WebIcon() {
 	return (
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			height={size}
-			viewBox="0 0 24 24"
-			width={size}
-			fill="currentColor"
-			className={className}
-		>
+		<Icon>
 			<rect
 				x="0"
 				y="0"
@@ -28,6 +16,6 @@ export const WebIcon: React.FC<IconProps> = ({ className = "", size = 24 }) => {
 					style={{ fill: "currentColor", fillRule: "nonzero" }}
 				/>
 			</g>
-		</svg>
+		</Icon>
 	);
-};
+}

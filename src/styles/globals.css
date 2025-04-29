@@ -6,14 +6,7 @@
 }
 
 @theme {
-	--color-primary: #11c0ff;
-	--color-secondary: #ffffff;
-	--color-pink: #ff00e5;
-	--color-purple: #8f00ff;
-	--color-turquoise: #00dfd8;
-	--color-blue: #007cf0;
-	--color-green: #00ffa3;
-	--color-grey: #656565;
+	--color-subtitle: #342977;
 }
 
 html {
@@ -22,7 +15,6 @@ html {
 
 :root {
 	--background: linear-gradient(130deg, #0f0823, #150b2e);
-	--subtitle-color: #342977;
 }
 
 .bg-main {

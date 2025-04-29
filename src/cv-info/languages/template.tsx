@@ -46,12 +46,6 @@ export const PERSONAL_INFORMATION: PersonalInformation = {
 			href: "https://github.com/cjoecker",
 		},
 		{
-			icon: "twitter",
-			altText: "twitter account",
-			text: "@JockerDev",
-			href: "https://twitter.com/JockerDev",
-		},
-		{
 			icon: "linkedin",
 			altText: "linkedin profile",
 			text: "myprofilename",

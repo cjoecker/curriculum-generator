@@ -16,7 +16,6 @@ import { LinkedInIcon } from "@/icons/linked-in";
 import { Location } from "@/icons/location";
 import { PassportIcon } from "@/icons/passport";
 import { PhoneIcon } from "@/icons/phone";
-import { TwitterIcon } from "@/icons/twitter";
 import { WebIcon } from "@/icons/web";
 import { useCvData } from "@/utils/use-cv-data";
 
@@ -33,7 +32,6 @@ const icons: Record<TagInformation["icon"], ReactNode> = {
 	phone: <PhoneIcon />,
 	email: <EmailIcon />,
 	github: <GitHubIcon />,
-	twitter: <TwitterIcon />,
 	web: <WebIcon />,
 	linkedin: <LinkedInIcon />,
 	passport: <PassportIcon />,

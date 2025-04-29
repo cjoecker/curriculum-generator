@@ -27,14 +27,14 @@ export const Experience = ({ experience }: ExperienceProps) => {
 					return (
 						<div className="mb-5 last:mb-0" key={position.title}>
 							<span className="text-lg/1 font-bold">{position.title}</span>
-							<span className="ml-2 text-(--subtitle-color)">
+							<span className="text-subtitle ml-2">
 								{formatTimePeriod(position.startDate, position.endDate, lang)}
 							</span>
 							{position.descriptionBlocks.map((description, index) => {
 								return (
 									<div className="mt-1 mb-3" key={index}>
 										<div className="text-sm">{description.text}</div>
-										<div className="-mt-0.5 text-xs text-(--subtitle-color) italic">
+										<div className="text-subtitle -mt-0.5 text-xs italic">
 											{description.tagsTitle}
 										</div>
 										<div className="mt-1 flex flex-wrap gap-1.5">

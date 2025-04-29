@@ -1,23 +1,10 @@
 import React from "react";
 
-interface IconProps {
-	className?: string;
-	size?: number;
-}
+import Icon from "@/components/icon";
 
-export const PassportIcon: React.FC<IconProps> = ({
-	className = "",
-	size = 24,
-}) => {
+export function PassportIcon() {
 	return (
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			height={size}
-			viewBox="0 0 24 24"
-			width={size}
-			fill="currentColor"
-			className={className}
-		>
+		<Icon>
 			<rect
 				x="0"
 				y="0"
@@ -30,6 +17,6 @@ export const PassportIcon: React.FC<IconProps> = ({
 				style={{ fillRule: "nonzero" }}
 			/>
 			<path d="M11.024,9.5L13.324,9.5C13.203,11.344 12.415,12.632 12.174,12.985C11.934,12.632 11.145,11.344 11.024,9.5ZM10.014,9.5C10.099,10.963 10.561,12.13 10.939,12.858C9.401,12.435 8.233,11.117 8.031,9.5L10.014,9.5ZM14.335,9.5L15.969,9.5C15.786,10.966 14.808,12.187 13.481,12.716C13.843,11.983 14.255,10.872 14.335,9.5ZM10.927,5.146C10.345,6.349 10.082,7.48 10.017,8.5L8.031,8.5C8.232,6.887 9.395,5.572 10.927,5.146ZM13.488,5.286C14.812,5.818 15.786,7.037 15.969,8.5L14.332,8.5C14.269,7.52 14.024,6.437 13.488,5.286ZM12.132,5.002C12.161,5.003 12.19,5.004 12.218,5.006C12.935,6.267 13.246,7.45 13.321,8.5L11.027,8.5C11.103,7.449 11.414,6.266 12.132,5.002Z" />
-		</svg>
+		</Icon>
 	);
-};
+}
