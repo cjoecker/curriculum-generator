@@ -2,6 +2,7 @@ import { Quicksand } from "next/font/google";
 import * as React from "react";
 
 import { Education } from "@/components/education";
+import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Hobbies } from "@/components/hobbies";
 import { Languages } from "@/components/languagues";
@@ -32,12 +33,7 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
-				<div className="absolute bottom-3 left-0 flex w-full justify-between px-6 italic">
-					<div className="opacity-70">
-						Handcrafted with <span className="not-italic">♥</span> and React
-					</div>
-					<div className="">Last updated on {formatDate(new Date(), true)}</div>
-				</div>
+				<Footer />
 			</div>
 		</div>
 	);
