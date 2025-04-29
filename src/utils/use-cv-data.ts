@@ -1,6 +1,7 @@
-import { useParams, useSearchParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 import { useEffect, useState } from "react";
-import { CvData, getCvData } from '@/cv-info/get-cv-data'
+
+import { CvData, getCvData } from "@/cv-info/get-cv-data";
 
 export function useCvData() {
 	const searchParams = useSearchParams();

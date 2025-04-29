@@ -1,7 +1,9 @@
-import { ExperienceAndEducation } from "@/cv-info/get-cv-data";
-import { formatTimePeriod } from "../utils/format-date";
-import { Tag } from '@/components/tag'
 import { useSearchParams } from "next/navigation";
+
+import { formatTimePeriod } from "../utils/format-date";
+
+import { Tag } from "@/components/tag";
+import { ExperienceAndEducation } from "@/cv-info/get-cv-data";
 
 interface ExperienceProps {
 	experience: ExperienceAndEducation;
@@ -13,8 +15,10 @@ export const Experience = ({ experience }: ExperienceProps) => {
 
 	return (
 		<div className="mb-5 last:mb-0">
-			<div className="leading-snug mb-1">
-				<span className="font-bold text-gray-700">{experience.institution}</span>
+			<div className="mb-1 leading-snug">
+				<span className="font-bold text-gray-700">
+					{experience.institution}
+				</span>
 				{" – "}
 				<span>{experience.location}</span>
 			</div>
@@ -22,7 +26,7 @@ export const Experience = ({ experience }: ExperienceProps) => {
 				{experience.positions.map((position) => {
 					return (
 						<div className="mb-5 last:mb-0" key={position.title}>
-							<span className=" font-bold text-lg/1 ">{position.title}</span>
+							<span className="text-lg/1 font-bold">{position.title}</span>
 							<span className="ml-2 text-(--subtitle-color)">
 								{formatTimePeriod(position.startDate, position.endDate, lang)}
 							</span>
@@ -30,18 +34,12 @@ export const Experience = ({ experience }: ExperienceProps) => {
 								return (
 									<div className="mt-1 mb-3" key={index}>
 										<div className="text-sm">{description.text}</div>
-										<div className="-mt-0.5 text-xs italic text-(--subtitle-color)">
+										<div className="-mt-0.5 text-xs text-(--subtitle-color) italic">
 											{description.tagsTitle}
 										</div>
-										<div className="flex flex-wrap gap-1.5 mt-1">
+										<div className="mt-1 flex flex-wrap gap-1.5">
 											{description.tags.map((text) => {
-												return (
-													<Tag
-														key={text}
-													>
-														{text}
-													</Tag>
-												);
+												return <Tag key={text}>{text}</Tag>;
 											})}
 										</div>
 									</div>

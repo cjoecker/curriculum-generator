@@ -7,7 +7,9 @@ import puppeteer from "puppeteer";
 
 	const lang = process.argv[2] ?? "en";
 
-	await page.goto(`http://localhost:3000/?lang=${lang}`, { waitUntil: "networkidle2" });
+	await page.goto(`http://localhost:3000/?lang=${lang}`, {
+		waitUntil: "networkidle2",
+	});
 
 	const fileName = `cv-${lang}-christian-joecker.pdf`;
 

@@ -8,14 +8,13 @@
 @theme {
 	--color-primary: #11c0ff;
 	--color-secondary: #ffffff;
-	--color-pink: #FF00E5;
-	--color-purple: #8F00FF;
-	--color-turquoise: #00DFD8;
-	--color-blue: #007CF0;
-	--color-green: #00FFA3;
+	--color-pink: #ff00e5;
+	--color-purple: #8f00ff;
+	--color-turquoise: #00dfd8;
+	--color-blue: #007cf0;
+	--color-green: #00ffa3;
 	--color-grey: #656565;
 }
-
 
 html {
 	font-size: 12.3px;
@@ -46,7 +45,7 @@ p {
 	margin-bottom: 0.25rem;
 }
 
-.thin-underline{
+.thin-underline {
 	text-decoration: underline;
 	text-decoration-thickness: 0.5px;
 }

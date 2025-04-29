@@ -1,5 +1,4 @@
 import { Link } from "../../components/link";
-
 import {
 	ExperienceAndEducation,
 	Hobbies,

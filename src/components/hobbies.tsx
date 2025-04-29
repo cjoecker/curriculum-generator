@@ -1,6 +1,6 @@
-
 import { Title } from "./title";
-import { useCvData } from '@/utils/use-cv-data'
+
+import { useCvData } from "@/utils/use-cv-data";
 
 export const Hobbies = () => {
 	const data = useCvData();

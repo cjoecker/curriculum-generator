@@ -6,23 +6,23 @@ export function formatDate(date: Date, showDay = false) {
 	return showDay ? format(date, "MMM dd, yyyy") : format(date, "MMM, yyyy");
 }
 
-const yearAbbreviation:Record<string, string> = {
-		en: "y",
-		es: "a",
-		de: "J",
-}
+const yearAbbreviation: Record<string, string> = {
+	en: "y",
+	es: "a",
+	de: "J",
+};
 
-const monthAbbreviation:Record<string, string> = {
-		en: "m",
-		es: "m",
-		de: "M",
-}
+const monthAbbreviation: Record<string, string> = {
+	en: "m",
+	es: "m",
+	de: "M",
+};
 
 const present: Record<string, string> = {
-		en: "Present",
-		es: "Presente",
-		de: "Aktuell",
-}
+	en: "Present",
+	es: "Presente",
+	de: "Aktuell",
+};
 
 export function formatTimePeriod(
 	startDate: PeriodOfTime["startDate"],
@@ -30,8 +30,8 @@ export function formatTimePeriod(
 	lang: string = "en",
 ) {
 	const newEndDate = endDate === "today" ? new Date() : endDate;
-	const year= yearAbbreviation[lang] ?? yearAbbreviation.en;
-	const month= monthAbbreviation[lang] ?? monthAbbreviation.en;
+	const year = yearAbbreviation[lang] ?? yearAbbreviation.en;
+	const month = monthAbbreviation[lang] ?? monthAbbreviation.en;
 	const presentText = present[lang] ?? present.en;
 
 	const distanceInYears = (differenceInMonths(newEndDate, startDate) + 1) / 12;

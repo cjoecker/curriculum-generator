@@ -49,11 +49,11 @@ export type PeriodOfTime = {
 export function getCvData(lang: string = "TEMPLATE"): Promise<CvData> {
 	const path = `./languages/${lang.toLowerCase()}`;
 
-	return import(path).then((module) => ({
+	return import(path).then((module) => {return {
 		personalInformation: module.PERSONAL_INFORMATION,
 		languages: module.LANGUAGES,
 		hobbies: module.HOBBIES,
 		experience: module.EXPERIENCE,
 		education: module.EDUCATION,
-	}));
+	}});
 }

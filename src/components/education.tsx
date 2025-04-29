@@ -1,7 +1,7 @@
-
 import { Experience } from "./experience";
 import { Title } from "./title";
-import { useCvData } from '@/utils/use-cv-data'
+
+import { useCvData } from "@/utils/use-cv-data";
 
 export const Education = () => {
 	const data = useCvData();
