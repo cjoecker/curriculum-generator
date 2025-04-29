@@ -7,7 +7,6 @@ import { Header } from "@/components/header";
 import { Hobbies } from "@/components/hobbies";
 import { Languages } from "@/components/languagues";
 import { WorkExperience } from "@/components/work-experience";
-import { formatDate } from "@/utils/format-date";
 
 const quicksandSans = Quicksand({
 	variable: "--font-quicksand",

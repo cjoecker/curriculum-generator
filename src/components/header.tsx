@@ -46,7 +46,13 @@ export const PersonalInformationItem = ({
 	altText,
 }: Props) => {
 	const iconSvg = icons[icon as TagInformation["icon"]];
-	const enhancedText = href ? <Link dark href={href}>{text}</Link> : <>{text}</>;
+	const enhancedText = href ? (
+		<Link dark href={href}>
+			{text}
+		</Link>
+	) : (
+		<>{text}</>
+	);
 
 	return (
 		<div className="flex">

@@ -24,6 +24,12 @@ const present: Record<string, string> = {
 	de: "Aktuell",
 };
 
+const numberFormatLocale: Record<string, string> = {
+	en: "en-US",
+	es: "es-ES",
+	de: "de-DE",
+};
+
 export function formatTimePeriod(
 	startDate: PeriodOfTime["startDate"],
 	endDate: PeriodOfTime["endDate"],
@@ -35,12 +41,21 @@ export function formatTimePeriod(
 	const presentText = present[lang] ?? present.en;
 
 	const distanceInYears = (differenceInMonths(newEndDate, startDate) + 1) / 12;
-	const distance =
+
+	const distanceUnit = distanceInYears > 1 ? year : month;
+	const distanceValue =
 		distanceInYears > 1
-			? `${distanceInYears.toFixed(1).replace(".0", "")}${year}`
-			: `${differenceInMonths(newEndDate, startDate)}${month}`;
+			? distanceInYears
+			: differenceInMonths(newEndDate, startDate);
+	const valueLocale = numberFormatLocale[lang] ?? numberFormatLocale.en;
+	const roundedDistanceValue = Math.round(distanceValue * 10) / 10;
+	const distanceFormattedValue = new Intl.NumberFormat(valueLocale).format(
+		roundedDistanceValue,
+	);
+
+	const distanceText = `(${distanceFormattedValue}${distanceUnit})`;
 
 	return endDate === "today"
-		? `${formatDate(startDate)} - ${presentText}  (${distance})`
-		: `${formatDate(startDate)} - ${formatDate(endDate)}  (${distance})`;
+		? `${formatDate(startDate)} - ${presentText}  ${distanceText}`
+		: `${formatDate(startDate)} - ${formatDate(endDate)}  ${distanceText}`;
 }

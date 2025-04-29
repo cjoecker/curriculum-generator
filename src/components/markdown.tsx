@@ -1,5 +1,6 @@
 import { JSX } from "react";
 import ReactMarkdown from "react-markdown";
+
 import { Link } from "@/components/link";
 
 export function Markdown({ children }: { children: string }): JSX.Element {
@@ -7,7 +8,11 @@ export function Markdown({ children }: { children: string }): JSX.Element {
 		<ReactMarkdown
 			components={{
 				a: ({ node: _node, ...props }) => {
-					return <Link dark={false} href={props.href as never}>{props.children as never}</Link>;
+					return (
+						<Link dark={false} href={props.href as never}>
+							{props.children as never}
+						</Link>
+					);
 				},
 			}}
 		>

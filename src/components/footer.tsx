@@ -9,4 +9,4 @@ export function Footer() {
 			<div className="">Last updated on {formatDate(new Date(), true)}</div>
 		</div>
 	);
-} 
+}

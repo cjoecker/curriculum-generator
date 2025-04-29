@@ -1,4 +1,3 @@
-import { Link } from "../../components/link";
 import {
 	ExperienceAndEducation,
 	Hobbies,
@@ -9,7 +8,8 @@ import {
 export const PERSONAL_INFORMATION: PersonalInformation = {
 	name: "John Doe",
 	title: "Best Developer",
-	summary: "Airedale who moved my cheese when the cheese comes out everybody's happy. Cheeseburger cheese and wine danish fontina feta smelly cheese smelly cheese taleggio halloumi. Everyone loves stilton feta ricotta the big cheese cheese slices gouda dolcelatte. Gouda jarlsberg.",
+	summary:
+		"Airedale who moved my cheese when the cheese comes out everybody's happy. Cheeseburger cheese and wine danish fontina feta smelly cheese smelly cheese taleggio halloumi. Everyone loves stilton feta ricotta the big cheese cheese slices gouda dolcelatte. Gouda jarlsberg.",
 	tags: [
 		{
 			icon: "location",
@@ -59,7 +59,8 @@ export const LANGUAGES: Languages = [
 	{ language: "Quenya", level: "Good command" },
 ];
 
-export const HOBBIES: Hobbies = "**Apps development**: [d-cide](https://d-cide.me/), [3 Point Estimator](https://cjoecker.github.io/3-point-estimator/), [Core Values Finder](https://cjoecker.github.io/core-values-finder/), [BrainMe Geography](https://youtu.be/kxmVIVph09Q)\n\n**Open source contributions**: React, Remix, and Prisma";
+export const HOBBIES: Hobbies =
+	"**Apps development**: [d-cide](https://d-cide.me/), [3 Point Estimator](https://cjoecker.github.io/3-point-estimator/), [Core Values Finder](https://cjoecker.github.io/core-values-finder/), [BrainMe Geography](https://youtu.be/kxmVIVph09Q)\n\n**Open source contributions**: React, Remix, and Prisma";
 
 const bestCompany: ExperienceAndEducation = {
 	institution: "Best Company Inc",
