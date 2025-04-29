@@ -5,10 +5,16 @@ import puppeteer from "puppeteer";
 	const browser = await puppeteer.launch({ headless: true });
 	const page = await browser.newPage();
 
-	await page.goto("http://localhost:3000/", { waitUntil: "networkidle2" });
+	const lang = process.argv[2] ?? "en";
+
+	await page.goto(`http://localhost:3000/?lang=${lang}`, {
+		waitUntil: "networkidle2",
+	});
+
+	const fileName = `cv-${lang}-christian-joecker.pdf`;
 
 	await page.pdf({
-		path: "export.pdf",
+		path: fileName,
 		format: "A4",
 		omitBackground: false,
 		printBackground: true,

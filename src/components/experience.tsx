@@ -1,15 +1,25 @@
-import { ExperienceAndEducation } from "../constants/curriculum-information.models";
+import { useSearchParams } from "next/navigation";
+
 import { formatTimePeriod } from "../utils/format-date";
+
+import { Markdown } from "@/components/markdown";
+import { Tag } from "@/components/tag";
+import { ExperienceAndEducation } from "@/cv-info/get-cv-data";
 
 interface ExperienceProps {
 	experience: ExperienceAndEducation;
 }
 
 export const Experience = ({ experience }: ExperienceProps) => {
+	const searchParams = useSearchParams();
+	const lang = searchParams.get("lang") ?? undefined;
+
 	return (
 		<div className="mb-5 last:mb-0">
-			<div className="leading-snug">
-				<span className="font-bold">{experience.institution}</span>
+			<div className="mb-1 leading-snug">
+				<span className="font-bold text-gray-700">
+					{experience.institution}
+				</span>
 				{" – "}
 				<span>{experience.location}</span>
 			</div>
@@ -17,27 +27,22 @@ export const Experience = ({ experience }: ExperienceProps) => {
 				{experience.positions.map((position) => {
 					return (
 						<div className="mb-5 last:mb-0" key={position.title}>
-							<span className="underline decoration-1">{position.title}</span>
-							<span className="ml-2 text-sky-800">
-								{formatTimePeriod(position.startDate, position.endDate)}
+							<span className="text-lg/1 font-bold">{position.title}</span>
+							<span className="text-subtitle ml-2">
+								{formatTimePeriod(position.startDate, position.endDate, lang)}
 							</span>
 							{position.descriptionBlocks.map((description, index) => {
 								return (
 									<div className="mt-1 mb-3" key={index}>
-										<div className="text-sm">{description.text}</div>
-										<div className="-mt-0.5 ml-1 text-xs italic">
+										<div className="text-sm">
+											<Markdown>{description.text}</Markdown>
+										</div>
+										<div className="text-subtitle -mt-0.5 text-xs italic">
 											{description.tagsTitle}
 										</div>
-										<div className="flex flex-wrap">
-											{description.tags.map((tag) => {
-												return (
-													<div
-														className="bg-tag m-1 rounded-full bg-white px-2 text-sm"
-														key={tag}
-													>
-														{tag}
-													</div>
-												);
+										<div className="mt-1 flex flex-wrap gap-1.5">
+											{description.tags.map((text) => {
+												return <Tag key={text}>{text}</Tag>;
 											})}
 										</div>
 									</div>

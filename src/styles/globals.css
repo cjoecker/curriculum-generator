@@ -2,35 +2,27 @@
 
 @theme inline {
 	--color-background: var(--background);
-	--color-foreground: var(--foreground);
-	--font-sans: var(--font-quicksand);
+	--font-sans: var(--font-main);
+}
+
+@theme {
+	--color-subtitle: #342977;
 }
 
 html {
-	font-size: 12.3px;
+	font-size: 12.2px;
 }
 
 :root {
-	--background: linear-gradient(130deg, rgb(227, 227, 241), rgb(200, 200, 227));
-	--foreground: #171717;
+	--background: linear-gradient(130deg, #0f0823, #150b2e);
 }
 
 .bg-main {
 	background: var(--background);
 }
 
-@media print {
-	html {
-		background: var(--background);
-	}
-	.bg-main {
-		background: initial;
-	}
-}
-
 a:after {
 	content: "";
-	background-image: url("/images/link.svg");
 	background-size: 100% 100%;
 	display: inline-block;
 	height: 11px;
@@ -40,23 +32,19 @@ a:after {
 	margin-left: 1px;
 }
 
+a.dark:after {
+	background-image: url("/images/link-dark.svg");
+}
+
+a.light:after {
+	background-image: url("/images/link-light.svg");
+}
+
 p {
 	margin-bottom: 0.25rem;
 }
 
-.bg-tag {
-	background: linear-gradient(145deg, #c5c5d9, #d7d7e5);
-	box-shadow:
-		3px 3px 5px rgb(181, 181, 199),
-		-3px -3px 5px rgba(229, 229, 245, 0.5);
-	-webkit-print-color-adjust: exact;
-	-webkit-filter: opacity(1);
-}
-
-.bg-information-circle {
-	box-shadow:
-		2px 2px 4px #9c9cae,
-		-2px -2px 4px #e9e9ea;
-	-webkit-print-color-adjust: exact;
-	-webkit-filter: opacity(1);
+.thin-underline {
+	text-decoration: underline;
+	text-decoration-thickness: 0.5px;
 }

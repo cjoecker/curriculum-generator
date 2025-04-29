@@ -1,40 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Curriculum Generator
 
-## Getting Started
+Project to generate my own beautiful curriculums with my personal brand.
 
-First, run the development server:
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/68610995-436d-4ec0-8248-c067f54eee5e" alt="drawing" width="400"/>
+</p>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+👆In [this article](https://medium.com/@c.jocker/best-way-to-convert-a-react-page-to-pdf-489a9fda36f0) I describe the best way to generate PDFs with react
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How to use
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository
+2. Copy `src/cv-info/languages/template.tsx` to `src/cv-info/languages/en.tsx`
+3. Adapt the information in `src/cv-info/languages/en.tsx`
+   The following constants should be exported:
+   ```typescript
+   export const PERSONAL_INFORMATION: PersonalInformation;
+   export const LANGUAGES: Languages;
+   export const HOBBIES: Hobbies;
+   export const EXPERIENCE: ExperienceAndEducation[];
+   export const EDUCATION: ExperienceAndEducation[];
+   ```
+   For different positions or university degrees in the same institution,
+   you can add a new entry to the `positions` array
+   For different activities or roles in the same position, you can add a new entry to the `descriptionBlocks` array
+4. Replace [candidate-image.jpeg](public/images/candidate-image.jpeg) with an image of yourself
+5. Run `npm run dev`
+6. Go to [http://localhost:3000/?lang=en](http://localhost:3000/?lang=en) to see the result
+7. Play with the sizes on the CV to fill the page and make it look proportional.
+   For that, you can change the root font size on the `.html` class in [globals.css](src/styles/globals.css).
+8. Save as pdf running `npm run export:pdf-en` to save the CV in English
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+ℹ️ You can have your cv in different languages adding a new file to `src/cv-info/languages/` and exporting the same constants as in `en.tsx`

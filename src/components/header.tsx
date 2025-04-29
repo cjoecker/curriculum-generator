@@ -1,18 +1,43 @@
 import Image from "next/image";
 import * as React from "react";
+import { ReactNode } from "react";
 
 import candidateImage from "../../public/images/candidate-image.jpeg";
+import meshImage from "../../public/images/mesh-purple-turquoise.svg";
 
 import { Link } from "./link";
 
-import { PERSONAL_INFORMATION } from "@/constants/curriculum-information";
+import { Tag } from "@/components/tag";
+import { TagInformation } from "@/cv-info/get-cv-data";
+import { BirthdayIcon } from "@/icons/birthday";
+import { EmailIcon } from "@/icons/email";
+import { GitHubIcon } from "@/icons/git-hub";
+import { LinkedInIcon } from "@/icons/linked-in";
+import { Location } from "@/icons/location";
+import { PassportIcon } from "@/icons/passport";
+import { PhoneIcon } from "@/icons/phone";
+import { WebIcon } from "@/icons/web";
+import { useCvData } from "@/utils/use-cv-data";
 
 interface Props {
-	icon: string;
+	icon: TagInformation["icon"];
 	text: string;
 	href?: string;
 	altText: string;
 }
+
+const icons: Record<TagInformation["icon"], ReactNode> = {
+	location: <Location />,
+	birthday: <BirthdayIcon />,
+	phone: <PhoneIcon />,
+	email: <EmailIcon />,
+	github: <GitHubIcon />,
+	web: <WebIcon />,
+	linkedin: <LinkedInIcon />,
+	passport: <PassportIcon />,
+};
+
+const ICON_SIZE = 14;
 
 export const PersonalInformationItem = ({
 	icon,
@@ -20,21 +45,32 @@ export const PersonalInformationItem = ({
 	href,
 	altText,
 }: Props) => {
-	const iconSrc = `./images/${icon}.svg`;
-	const enhancedText = href ? <Link href={href}>{text}</Link> : <>{text}</>;
+	const iconSvg = icons[icon as TagInformation["icon"]];
+	const enhancedText = href ? (
+		<Link dark href={href}>
+			{text}
+		</Link>
+	) : (
+		<>{text}</>
+	);
 
 	return (
 		<div className="flex">
-			<div className="bg-information-circle my-auto flex h-8 min-w-[2rem] justify-center rounded-full">
-				<Image
-					width={24}
-					height={24}
-					src={iconSrc}
-					alt={altText}
-					className="m-auto h-5 w-5"
-				/>
-			</div>
-			<div className="my-auto ml-2 leading-4 leading-5 whitespace-pre-wrap">
+			<Tag circularSize={24} dark={true}>
+				<div
+					style={{
+						width: ICON_SIZE,
+						height: ICON_SIZE,
+					}}
+					className="m-auto flex items-center justify-center"
+				>
+					{iconSvg}
+				</div>
+			</Tag>
+			<div
+				className="my-auto ml-1.5 leading-4 whitespace-pre-wrap"
+				aria-label={altText}
+			>
 				{enhancedText}
 			</div>
 		</div>
@@ -42,27 +78,28 @@ export const PersonalInformationItem = ({
 };
 
 export const Header = () => {
+	const data = useCvData();
 	return (
-		<div className="flex flex-col gap-2">
-			<div className="flex flex-shrink-0 flex-grow-0 gap-4">
+		<div className="bg-main relative flex flex-col gap-2 overflow-hidden rounded-b p-4 text-white">
+			<div className="relative z-10 flex flex-shrink-0 flex-grow-0 gap-4">
 				<Image
 					alt="candidate"
-					width={240}
-					height={240}
 					src={candidateImage}
-					className="h-40 w-40 rounded-xl object-cover"
+					className="h-[35mm] w-[35mm] rounded object-cover"
 				/>
 				<div className="flex w-full flex-1 flex-col justify-center">
-					<h1 className="text-3xl font-bold text-sky-800">
-						{PERSONAL_INFORMATION.name}
+					<h1 className="text-3xl font-bold text-[#9fd0f9]">
+						{data?.personalInformation.name}
 					</h1>
-					<h2 className="text-lg font-bold">{PERSONAL_INFORMATION.title}</h2>
-					<p className="mt-2 text-sm">{PERSONAL_INFORMATION.summary}</p>
+					<h2 className="text-lg font-bold">
+						{data?.personalInformation.title}
+					</h2>
+					<p className="mt-2 text-sm">{data?.personalInformation.summary}</p>
 				</div>
 			</div>
-			<div className="flex flex-1 flex-col">
-				<div className="grid w-full grid-cols-4 gap-2">
-					{PERSONAL_INFORMATION.tags.map((t) => {
+			<div className="relative z-10 flex flex-1 flex-col">
+				<div className="grid w-full grid-cols-4 gap-2 px-2">
+					{data?.personalInformation.tags.map((t) => {
 						return (
 							<PersonalInformationItem
 								key={t.altText}
@@ -75,6 +112,12 @@ export const Header = () => {
 					})}
 				</div>
 			</div>
+			<Image
+				aria-hidden={true}
+				alt={""}
+				src={meshImage}
+				className="absolute top-[-50mm] right-[-30mm] z-0 flex h-[150mm] w-[450mm]"
+			/>
 		</div>
 	);
 };

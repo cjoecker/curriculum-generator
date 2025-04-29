@@ -1,55 +1,38 @@
-import { Quicksand } from "next/font/google";
-import { ReactNode } from "react";
+import { Red_Hat_Display } from "next/font/google";
+import * as React from "react";
 
 import { Education } from "@/components/education";
+import { Footer } from "@/components/footer";
 import { Header } from "@/components/header";
 import { Hobbies } from "@/components/hobbies";
 import { Languages } from "@/components/languagues";
 import { WorkExperience } from "@/components/work-experience";
-import { formatDate } from "@/utils/format-date";
 
-const quicksandSans = Quicksand({
-	variable: "--font-quicksand",
+const quicksandSans = Red_Hat_Display({
+	variable: "--font-main",
 	subsets: ["latin"],
 });
-
-export const Box = ({ children }: { children: ReactNode | ReactNode[] }) => {
-	return <div className="m-5 flex">{children}</div>;
-};
 
 export default function Home() {
 	return (
 		<div
-			className={`flex h-screen w-screen ${quicksandSans.className} font-quicksand text-black`}
+			className={`flex h-screen w-screen ${quicksandSans.className} font-quicksand`}
 		>
-			<div className="bg-main relative mx-auto h-[296mm] w-[210mm] p-[2mm]">
-				<Box>
+			<div className="relative mx-auto h-[296mm] w-[210mm] overflow-hidden">
+				<div className="relative z-10">
 					<Header />
-				</Box>
-				<div className="flex">
-					<div className="min-w-[145mm]">
-						<Box>
+					<div className="mt-1 flex gap-6 px-6 py-2">
+						<div className="w-[660mm]">
 							<WorkExperience />
-						</Box>
-					</div>
-					<div>
-						<Box>
+						</div>
+						<div className="flex flex-col gap-4">
 							<Education />
-						</Box>
-						<Box>
 							<Languages />
-						</Box>
-						<Box>
 							<Hobbies />
-						</Box>
+						</div>
 					</div>
 				</div>
-				<div className="absolute bottom-3 left-0 flex w-full justify-between px-[6mm] italic">
-					<div className="opacity-70">
-						Handcrafted with <span className="not-italic">♥</span> and React
-					</div>
-					<div className="">Last updated on {formatDate(new Date(), true)}</div>
-				</div>
+				<Footer />
 			</div>
 		</div>
 	);
