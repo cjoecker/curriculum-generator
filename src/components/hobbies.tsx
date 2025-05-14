@@ -7,7 +7,7 @@ export const Hobbies = () => {
 	const data = useCvData();
 	return (
 		<div className="flex flex-col">
-			<Title label="Hobbies & Projects" />
+			<Title label={data?.titles.hobbiesAndProjects} />
 			<Markdown>{data?.hobbies ?? ""}</Markdown>
 		</div>
 	);

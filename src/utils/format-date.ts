@@ -1,6 +1,6 @@
 import { differenceInMonths, format } from "date-fns";
 
-import { PeriodOfTime } from "@/cv-info/get-cv-data";
+import { PeriodOfTime } from "@/utils/use-cv-data";
 
 export function formatDate(date: Date, showDay = false) {
 	return showDay ? format(date, "MMM dd, yyyy") : format(date, "MMM, yyyy");

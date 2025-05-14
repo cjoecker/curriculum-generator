@@ -7,7 +7,7 @@ export const WorkExperience = () => {
 	const data = useCvData();
 	return (
 		<div className="flex flex-col">
-			<Title label={"Work Experience"} />
+			<Title label={data?.titles.workExperience} />
 			{data?.experience.map((experienceBlock) => {
 				return (
 					<Experience

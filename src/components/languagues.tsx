@@ -6,7 +6,7 @@ export const Languages = () => {
 	const data = useCvData();
 	return (
 		<div className="mb-4 flex flex-col">
-			<Title label="Languages" />
+			<Title label={data?.titles.languages} />
 			{data?.languages.map((l) => {
 				return (
 					<div className="flex-1" key={l.language}>

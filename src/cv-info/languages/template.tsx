@@ -3,7 +3,7 @@ import {
 	Hobbies,
 	Languages,
 	PersonalInformation,
-} from "../get-cv-data";
+} from "@/utils/use-cv-data";
 
 export const PERSONAL_INFORMATION: PersonalInformation = {
 	name: "John Doe",

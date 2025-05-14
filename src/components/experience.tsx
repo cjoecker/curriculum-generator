@@ -4,7 +4,7 @@ import { formatTimePeriod } from "../utils/format-date";
 
 import { Markdown } from "@/components/markdown";
 import { Tag } from "@/components/tag";
-import { ExperienceAndEducation } from "@/cv-info/get-cv-data";
+import { ExperienceAndEducation } from "@/utils/use-cv-data";
 
 interface ExperienceProps {
 	experience: ExperienceAndEducation;

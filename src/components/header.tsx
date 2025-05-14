@@ -8,7 +8,6 @@ import meshImage from "../../public/images/mesh-purple-turquoise.svg";
 import { Link } from "./link";
 
 import { Tag } from "@/components/tag";
-import { TagInformation } from "@/cv-info/get-cv-data";
 import { BirthdayIcon } from "@/icons/birthday";
 import { EmailIcon } from "@/icons/email";
 import { GitHubIcon } from "@/icons/git-hub";
@@ -17,6 +16,7 @@ import { Location } from "@/icons/location";
 import { PassportIcon } from "@/icons/passport";
 import { PhoneIcon } from "@/icons/phone";
 import { WebIcon } from "@/icons/web";
+import { TagInformation } from "@/utils/use-cv-data";
 import { useCvData } from "@/utils/use-cv-data";
 
 interface Props {
