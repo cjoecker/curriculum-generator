@@ -2,10 +2,6 @@ import { differenceInMonths, format } from "date-fns";
 
 import { PeriodOfTime } from "@/utils/use-cv-data";
 
-export function formatDate(date: Date, showDay = false) {
-	return showDay ? format(date, "MMM dd, yyyy") : format(date, "MMM, yyyy");
-}
-
 const yearAbbreviation: Record<string, string> = {
 	en: "y",
 	es: "a",
@@ -54,8 +50,9 @@ export function formatTimePeriod(
 	);
 
 	const distanceText = `(${distanceFormattedValue}${distanceUnit})`;
+	const dateFormat = "MMM yyyy";
 
 	return endDate === "today"
-		? `${formatDate(startDate)} - ${presentText}  ${distanceText}`
-		: `${formatDate(startDate)} - ${formatDate(endDate)}  ${distanceText}`;
+		? `${format(startDate, dateFormat)} - ${presentText}  ${distanceText}`
+		: `${format(startDate, dateFormat)} - ${format(endDate, dateFormat)}  ${distanceText}`;
 }

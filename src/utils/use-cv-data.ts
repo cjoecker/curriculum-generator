@@ -9,6 +9,8 @@ export type Titles = {
 	workExperience: string;
 	languages: string;
 	hobbiesAndProjects: string;
+	footer: string;
+	lastUpdated: string;
 };
 
 export type CvData = {
@@ -60,7 +62,9 @@ export type PeriodOfTime = {
 };
 export function getCvData(lang: string = "TEMPLATE"): Promise<CvData> {
 	const path = `../cv-info/languages/${lang.toLowerCase()}`;
-	const titleData = titles[lang as keyof typeof titles];
+
+	const titleLocale = lang === "TEMPLATE" ? "en" : lang;
+	const titleData = titles[titleLocale as keyof typeof titles];
 
 	return import(path).then((module) => {
 		const nameLower = module.PERSONAL_INFORMATION.name
@@ -92,18 +96,24 @@ const titles: Record<string, Titles> = {
 		education: "Ausbildung",
 		languages: "Sprachen",
 		hobbiesAndProjects: "Hobbys & Projekte",
+		footer: "Handgefertigt mit ♥ und React",
+		lastUpdated: "Aktualisiert im",
 	},
 	en: {
 		workExperience: "Work Experience",
 		education: "Education",
 		languages: "Languages",
 		hobbiesAndProjects: "Hobbies & Projects",
+		footer: "Handcrafted with ♥ and React",
+		lastUpdated: "Last updated on",
 	},
 	es: {
 		workExperience: "Experiencia Laboral",
 		education: "Educación",
 		languages: "Idiomas",
 		hobbiesAndProjects: "Aficiones & Proyectos",
+		footer: "Hecho a mano con ♥ y React",
+		lastUpdated: "Última actualización el",
 	},
 };
 
