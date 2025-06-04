@@ -94,7 +94,9 @@ export const Header = () => {
 					<h2 className="text-lg font-bold">
 						{data?.personalInformation.title}
 					</h2>
-					<p className="mt-2 text-sm">{data?.personalInformation.summary}</p>
+					<p className="mt-2 text-sm whitespace-pre-wrap">
+						{data?.personalInformation.summary}
+					</p>
 				</div>
 			</div>
 			<div className="relative z-10 flex flex-1 flex-col">

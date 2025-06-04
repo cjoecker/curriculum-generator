@@ -27,8 +27,8 @@ export default function Home() {
 			<div className="relative mx-auto h-[296mm] w-[210mm] overflow-hidden">
 				<div className="relative z-10">
 					<Header />
-					<div className="mt-1 flex gap-6 px-6 py-2">
-						<div className="w-[660mm]">
+					<div className="mt-1 flex gap-10 px-6 py-2">
+						<div className="w-[500mm]">
 							<WorkExperience />
 						</div>
 						<div className="flex flex-col gap-4">
