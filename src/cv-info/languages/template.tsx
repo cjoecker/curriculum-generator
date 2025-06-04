@@ -5,6 +5,8 @@ import {
 	PersonalInformation,
 } from "@/utils/use-cv-data";
 
+export const WEBSITE = "https://jocker.dev";
+
 export const PERSONAL_INFORMATION: PersonalInformation = {
 	name: "John Doe",
 	title: "Best Developer",

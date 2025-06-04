@@ -81,6 +81,7 @@ export const Header = () => {
 	const data = useCvData();
 	return (
 		<div className="bg-main relative flex flex-col gap-2 overflow-hidden rounded-b p-4 text-white">
+			<WebsiteButton />
 			<div className="relative z-10 flex flex-shrink-0 flex-grow-0 gap-4">
 				<Image
 					alt="candidate"
@@ -120,6 +121,26 @@ export const Header = () => {
 				src={meshImage}
 				className="absolute top-[-50mm] right-[-30mm] z-0 flex h-[150mm] w-[450mm]"
 			/>
+		</div>
+	);
+};
+
+export const WebsiteButton = () => {
+	const data = useCvData();
+	const website = data?.website ?? "";
+	const websiteName = website?.replace(/^https?:\/\//i, "");
+
+	return (
+		<div
+			style={{ boxShadow: "0px 0px 15px -2px var(--color-cyan-400)" }}
+			className="absolute top-[6mm] right-[4mm] z-20 flex items-center justify-center rounded-md bg-linear-to-br from-cyan-400 to-blue-500"
+		>
+			<div className="text-md m-[1px] rounded-md bg-zinc-900/80 px-[2mm] py-[1mm] font-semibold">
+				<span className="font-normal">{`${data?.titles.moreAt} `}</span>
+				<Link dark href={website}>
+					{websiteName}
+				</Link>
+			</div>
 		</div>
 	);
 };

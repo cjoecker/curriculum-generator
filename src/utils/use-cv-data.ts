@@ -11,6 +11,7 @@ export type Titles = {
 	hobbiesAndProjects: string;
 	footer: string;
 	lastUpdated: string;
+	moreAt: string;
 };
 
 export type CvData = {
@@ -21,6 +22,7 @@ export type CvData = {
 	experience: ExperienceAndEducation[];
 	education: ExperienceAndEducation[];
 	titles: Titles;
+	website: string;
 };
 
 export type TagInformation = {
@@ -80,6 +82,7 @@ export function getCvData(lang: string = "TEMPLATE"): Promise<CvData> {
 			experience: module.EXPERIENCE,
 			education: module.EDUCATION,
 			titles: titleData,
+			website: module.WEBSITE,
 		};
 	});
 }
@@ -98,6 +101,7 @@ const titles: Record<string, Titles> = {
 		hobbiesAndProjects: "Hobbys & Projekte",
 		footer: "Handgefertigt mit ♥ und React",
 		lastUpdated: "Aktualisiert im",
+		moreAt: "Mehr unter",
 	},
 	en: {
 		workExperience: "Work Experience",
@@ -106,6 +110,7 @@ const titles: Record<string, Titles> = {
 		hobbiesAndProjects: "Hobbies & Projects",
 		footer: "Handcrafted with ♥ and React",
 		lastUpdated: "Last updated on",
+		moreAt: "See more at",
 	},
 	es: {
 		workExperience: "Experiencia Laboral",
@@ -114,6 +119,7 @@ const titles: Record<string, Titles> = {
 		hobbiesAndProjects: "Aficiones & Proyectos",
 		footer: "Hecho a mano con ♥ y React",
 		lastUpdated: "Última actualización el",
+		moreAt: "Más en",
 	},
 };
 
