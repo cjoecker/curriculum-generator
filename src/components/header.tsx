@@ -55,7 +55,7 @@ export const PersonalInformationItem = ({
 	);
 
 	return (
-		<div className="flex">
+		<div className="flex items-center">
 			<Tag circularSize={24} dark={true}>
 				<div
 					style={{
